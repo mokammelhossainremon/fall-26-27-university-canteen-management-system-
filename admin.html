@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CampusBite admin dashboard">
+    <meta name="author" content="rimon">
+    <title>Admin Dashboard | CampusBite</title>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <header class="topbar">
+        <div class="brand">
+            <img src="images/images/logo.png" alt="CampusBite Logo" width="50" height="50">
+            <span>CampusBite</span>
+        </div>
+
+        <form action="#" method="post">
+            <label for="user-menu" class="hidden-label">Account menu</label>
+            <select id="user-menu" name="userMenu">
+                <option value="admin">Admin</option>
+                <option value="profile">My Profile</option>
+                <option value="logout">Logout</option>
+            </select>
+        </form>
+    </header>
+
+    <div class="layout">
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <ul>
+                <li class="active">
+                    <a href="admin.html">
+                        <img src="images/images/icon-home.png" alt="Dashboard icon" width="28" height="28">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="manage-students.html">
+                        <img src="images/images/icon-students.png" alt="Manage Students icon" width="28" height="28">
+                        Manage Students
+                    </a>
+                </li>
+                <li>
+                    <a href="manage-manager.html">
+                        <img src="images/images/icon-students.png" alt="Manage managers icon" width="28" height="28">
+                        Manage managers
+                    </a>
+                </li>
+                <li>
+                    <a href="manage-staff.html">
+                        <img src="images/images/icon-students.png" alt="Manage staffs icon" width="28" height="28">
+                        Manage staffs
+                    </a>
+                </li>
+                <li>
+                    <a href="manage-food.html">
+                        <img src="images/images/icon-food.png" alt="Manage Food Items icon" width="28" height="28">
+                        Manage Food Items
+                    </a>
+                </li>
+                <li>
+                    <a href="reports.html">
+                        <img src="images/images/icon-reports.png" alt="View Reports icon" width="28" height="28">
+                        View Reports
+                    </a>
+                </li>
+                <li>
+                    <a href="logout.html">
+                        <img src="images/images/icon-logout.png" alt="Logout icon" width="28" height="28">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <h1>Admin Dashboard</h1>
+            <p class="welcome">Welcome, Admin!</p>
+
+            <!-- Summary Cards -->
+            <section class="stats">
+
+                <div class="stat-card card-green">
+                    <img src="images/images/stat-students.png" alt="Total Students" width="70" height="70">
+                    <div>
+                        <p class="number">120</p>
+                        <p class="caption">Total Students</p>
+                    </div>
+                </div>
+
+                <div class="stat-card card-peach">
+                    <img src="images/images/stat-food.png" alt="Food Items" width="70" height="70">
+                    <div>
+                        <p class="number">25</p>
+                        <p class="caption">Food Items</p>
+                    </div>
+                </div>
+
+                <div class="stat-card card-green">
+                    <img src="images/images/stat-orders.png" alt="Total Orders" width="70" height="70">
+                    <div>
+                        <p class="number">45</p>
+                        <p class="caption">Total Orders</p>
+                    </div>
+                </div>
+
+                <div class="stat-card card-peach">
+                    <img src="images/images/stat-sales.png" alt="Total Sales" width="70" height="70">
+                    <div>
+                        <p class="number">৳8,500</p>
+                        <p class="caption">Total Sales</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Dashboard Panels -->
+            <section class="panels">
+
+                <!-- Recent Users -->
+                <div class="panel users">
+                    <!-- Recent Users -->
+                    <div class="panel-head">
+                        <h2>Recent Users</h2>
+                        <a href="manage-students.html">View All &rarr;</a>
+                    </div>
+
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Student ID</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rahim Ahmed</td>
+                                <td>STU001</td>
+                                <td><span class="status-active">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td>Sara Khan</td>
+                                <td>STU002</td>
+                                <td><span class="status-active">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td>Tawhid Islam</td>
+                                <td>STU003</td>
+                                <td><span class="status-active">Active</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="panel actions">
+                    <h2>Quick Actions</h2>
+
+                    <div class="action-row">
+                        <a href="manage-students.html" class="action-btn">
+                            <img src="images/images/icon-students.png" alt="Manage Students" width="40" height="40">
+                            <span>Manage Students</span>
+                        </a>
+
+                        <a href="manage-food.html" class="action-btn orange">
+                            <img src="images/images/icon-food.png" alt="Manage Food Items" width="40" height="40">
+                            <span>Manage Food Items</span>
+                        </a>
+
+                        <a href="reports.html" class="action-btn">
+                            <img src="images/images/icon-reports.png" alt="View Reports" width="40" height="40">
+                            <span>View Reports</span>
+                        </a>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright &copy; 2026 CampusBite. All Rights Reserved.</p>
+        <p>University Canteen Management System</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CampusBite manager dashboard">
+    <meta name="author" content="rimon">
+    <title>Manager Dashboard | CampusBite</title>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <header class="topbar">
+        <div class="brand">
+            <img src="images/images/logo.png" alt="CampusBite Logo" width="50" height="50">
+            <span>CampusBite</span>
+        </div>
+
+        <form action="#" method="post">
+            <label for="user-menu" class="hidden-label">Account menu</label>
+            <select id="user-menu" name="userMenu">
+                <option value="manager">Manager</option>
+                <option value="profile">My Profile</option>
+                <option value="logout">Logout</option>
+            </select>
+        </form>
+    </header>
+
+    <div class="layout">
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <ul>
+                <li class="active">
+                    <a href="manager.html">
+                        <img src="images/images/icon-home.png" alt="Dashboard icon" width="28" height="28">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="view-food-items.html">
+                        <img src="images/images/icon-view-food.png" alt="View Food Items icon" width="28" height="28">
+                        View Food Items
+                    </a>
+                </li>
+                <li>
+                    <a href="add-food-item.html">
+                        <img src="images/images/icon-add.png" alt="Add Food Item icon" width="28" height="28">
+                        Add Food Item
+                    </a>
+                </li>
+                <li>
+                    <a href="food-availability.html">
+                        <img src="images/images/icon-availability.png" alt="Food Availability icon" width="28" height="28">
+                        Food Availability
+                    </a>
+                </li>
+                <li>
+                    <a href="logout.html">
+                        <img src="images/images/icon-logout.png" alt="Logout icon" width="28" height="28">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <h1>Manager Dashboard</h1>
+            <p class="welcome">Manage the food items</p>
+
+            <!-- Dashboard Panels -->
+            <section class="panels">
+
+                <!-- Food Items -->
+                <div class="panel food-list">
+                    <h2>Food Items</h2>
+
+                    <table class="food-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Food Name</th>
+                                <th>Price</th>
+                                <th>Availability</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img src="images/images/burger.jpg" alt="Burger" width="55" height="55">
+                                </td>
+                                <td>Burger</td>
+                                <td>৳120</td>
+                                <td><span class="status-available">Available</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/images/pizza.jpg" alt="Pizza" width="55" height="55">
+                                </td>
+                                <td>Pizza</td>
+                                <td>৳180</td>
+                                <td><span class="status-available">Available</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/images/french-fries.jpg" alt="French Fries" width="55" height="55">
+                                </td>
+                                <td>French Fries</td>
+                                <td>৳80</td>
+                                <td><span class="status-available">Available</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/images/tea.jpg" alt="Tea" width="55" height="55">
+                                </td>
+                                <td>Tea</td>
+                                <td>৳30</td>
+                                <td><span class="status-available">Available</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Add Food Item -->
+                <div class="panel add-food">
+                    <h2>Add Food Item</h2>
+
+                    <form action="#" method="post">
+                        <table class="form-table">
+                            <tr>
+                                <td><label for="food-name">Food Name</label></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" id="food-name" name="foodName" placeholder="e.g. Pasta" required></td>
+                            </tr>
+
+                            <tr>
+                                <td><label for="food-price">Price (৳)</label></td>
+                            </tr>
+                            <tr>
+                                <td><input type="number" id="food-price" name="foodPrice" placeholder="e.g. 100" min="0" required></td>
+                            </tr>
+
+                            <tr>
+                                <td><label for="food-availability">Availability</label></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select id="food-availability" name="foodAvailability">
+                                        <option value="available">Available</option>
+                                        <option value="unavailable">Unavailable</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="submit" value="Add Item"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+
+            </section>
+        </main>
+
+    </div>
+    <!-- Footer -->
+    <footer>
+        <p>Copyright &copy; 2026 CampusBite. All Rights Reserved.</p>
+        <p>University Canteen Management System</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CampusBite staff dashboard">
+    <meta name="author" content="rimon">
+    <title>Staff Dashboard | CampusBite</title>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <header class="topbar">
+        <div class="brand">
+            <img src="images/images/logo.png" alt="CampusBite Logo" width="50" height="50">
+            <span>CampusBite</span>
+        </div>
+
+        <form action="#" method="post">
+            <label for="user-menu" class="hidden-label">Account menu</label>
+            <select id="user-menu" name="userMenu">
+                <option value="staff">Staff</option>
+                <option value="profile">My Profile</option>
+                <option value="logout">Logout</option>
+            </select>
+        </form>
+    </header>
+
+    <div class="layout">
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <ul>
+                <li class="active">
+                    <a href="staff.html">
+                        <img src="images/images/icon-home.png" alt="Dashboard icon" width="28" height="28">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="menu.html">
+                        <img src="images/images/icon-menu.png" alt="Food Menu icon" width="28" height="28">
+                        Food Menu
+                    </a>
+                </li>
+                <li>
+                    <a href="staff-availability.html">
+                        <img src="images/images/icon-availability.png" alt="Food Availability icon" width="28" height="28">
+                        Food Availability
+                    </a>
+                </li>
+                <li>
+                    <a href="canteen-notices.html">
+                        <img src="images/images/icon-notices.png" alt="Canteen Notices icon" width="28" height="28">
+                        Canteen Notices
+                    </a>
+                </li>
+                <li>
+                    <a href="logout.html">
+                        <img src="images/images/icon-logout.png" alt="Logout icon" width="28" height="28">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <h1>Staff Dashboard</h1>
+            <p class="welcome">Welcome, Staff!</p>
+
+            <!-- Information Cards -->
+            <section class="card-row">
+
+                <div class="card">
+                    <h2>Staff Information</h2>
+                    <table class="info-table">
+                        <tr>
+                            <th>Name:</th>
+                            <td>Rafiq Ahmed</td>
+                        </tr>
+                        <tr>
+                            <th>Role:</th>
+                            <td>Canteen Staff</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="card notice">
+                    <h2>
+                        <img src="images/images/notice-megaphone.png" alt="Notice icon" width="32" height="32">
+                        Canteen Notice
+                    </h2>
+                    <p>Keep the canteen clean.</p>
+                </div>
+
+            </section>
+
+            <!-- Information Cards -->
+            <section class="card-row">
+
+                <div class="card">
+                    <h2>Food Menu (Today)</h2>
+                    <ul>
+                        <li>Burger &ndash; ৳120</li>
+                        <li>Pizza &ndash; ৳180</li>
+                        <li>Tea &ndash; ৳30</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Food Availability</h2>
+                    <div class="availability-box">
+                        <img src="images/images/check-green.png" alt="Available icon" width="32" height="32">
+                        <span>All items are available</span>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+    </div>
+    <!-- Footer -->
+    <footer>
+        <p>Copyright &copy; 2026 CampusBite. All Rights Reserved.</p>
+        <p>University Canteen Management System</p>
+    </footer>
+
+</body>
+
+</html>

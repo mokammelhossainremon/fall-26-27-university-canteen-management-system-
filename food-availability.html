@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CampusBite food availability page">
+    <meta name="author" content="rimon">
+    <title>Food Availability | CampusBite</title>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <header class="topbar">
+        <div class="brand">
+            <img src="images/images/logo.png" alt="CampusBite Logo" width="50" height="50">
+            <span>CampusBite</span>
+        </div>
+
+        <form action="#" method="post">
+            <label for="user-menu" class="hidden-label">Account menu</label>
+            <select id="user-menu" name="userMenu">
+                <option value="manager">Manager</option>
+                <option value="profile">My Profile</option>
+                <option value="logout">Logout</option>
+            </select>
+        </form>
+    </header>
+
+    <div class="layout">
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <ul>
+                <li>
+                    <a href="manager.html">
+                        <img src="images/images/icon-home.png" alt="Dashboard icon" width="28" height="28">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="view-food-items.html">
+                        <img src="images/images/icon-view-food.png" alt="View Food Items icon" width="28" height="28">
+                        View Food Items
+                    </a>
+                </li>
+                <li>
+                    <a href="add-food-item.html">
+                        <img src="images/images/icon-add.png" alt="Add Food Item icon" width="28" height="28">
+                        Add Food Item
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="food-availability.html">
+                        <img src="images/images/icon-availability.png" alt="Food Availability icon" width="28" height="28">
+                        Food Availability
+                    </a>
+                </li>
+                <li>
+                    <a href="logout.html">
+                        <img src="images/images/icon-logout.png" alt="Logout icon" width="28" height="28">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <h1>Food Availability</h1>
+            <p class="welcome">Update which items are available today</p>
+
+            <!-- Today's Availability -->
+            <div class="panel">
+                <h2>Today's Availability</h2>
+
+                <form action="#" method="post">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Food Name</th>
+                                <th>Current Status</th>
+                                <th>Change To</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Burger</td>
+                                <td><span class="status-available">Available</span></td>
+                                <td>
+                                    <label for="avail-burger" class="hidden-label">Burger availability</label>
+                                    <select id="avail-burger" name="availBurger">
+                                        <option value="available">Available</option>
+                                        <option value="unavailable">Unavailable</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pizza</td>
+                                <td><span class="status-available">Available</span></td>
+                                <td>
+                                    <label for="avail-pizza" class="hidden-label">Pizza availability</label>
+                                    <select id="avail-pizza" name="availPizza">
+                                        <option value="available">Available</option>
+                                        <option value="unavailable">Unavailable</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>French Fries</td>
+                                <td><span class="status-available">Available</span></td>
+                                <td>
+                                    <label for="avail-fries" class="hidden-label">French Fries availability</label>
+                                    <select id="avail-fries" name="availFries">
+                                        <option value="available">Available</option>
+                                        <option value="unavailable">Unavailable</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tea</td>
+                                <td><span class="status-available">Available</span></td>
+                                <td>
+                                    <label for="avail-tea" class="hidden-label">Tea availability</label>
+                                    <select id="avail-tea" name="availTea">
+                                        <option value="available">Available</option>
+                                        <option value="unavailable">Unavailable</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="panel-body">
+                        <br>
+                        <input type="submit" value="Update Availability">
+                        <input type="reset" value="Reset">
+                    </div>
+                </form>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright &copy; 2026 CampusBite. All Rights Reserved.</p>
+        <p>University Canteen Management System</p>
+    </footer>
+
+</body>
+
+</html>

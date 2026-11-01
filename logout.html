@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CampusBite logout page">
+    <meta name="author" content="rimon">
+    <title>Logout | CampusBite</title>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <header class="topbar">
+        <div class="brand">
+            <img src="images/images/logo.png" alt="CampusBite Logo" width="50" height="50">
+            <span>CampusBite</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Logout Message and Login Form -->
+        <div class="logout-box">
+            <img src="images/images/logo.png" alt="CampusBite Logo" width="80" height="80">
+            <h1>You have been logged out</h1>
+            <p>Thank you for using CampusBite. Log in again to continue.</p>
+
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Login</legend>
+                    <table class="form-table">
+                        <tr>
+                            <td><label for="login-id">User ID:</label></td>
+                            <td><input type="text" id="login-id" name="loginId" placeholder="Enter your ID" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="login-password">Password:</label></td>
+                            <td><input type="password" id="login-password" name="loginPassword" placeholder="Enter password" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="login-role">Role:</label></td>
+                            <td>
+                                <select id="login-role" name="loginRole">
+                                    <option value="admin">Admin</option>
+                                    <option value="manager">Manager</option>
+                                    <option value="staff">Staff</option>
+                                      <option value="Students">Students</option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="Login"></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright &copy; 2026 CampusBite. All Rights Reserved.</p>
+        <p>University Canteen Management System</p>
+    </footer>
+
+</body>
+
+</html>

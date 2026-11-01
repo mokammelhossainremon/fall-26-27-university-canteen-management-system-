@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CampusBite manage staffs page">
+    <meta name="author" content="rimon">
+    <title>Manage Staffs | CampusBite</title>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <header class="topbar">
+        <div class="brand">
+            <img src="images/images/logo.png" alt="CampusBite Logo" width="50" height="50">
+            <span>CampusBite</span>
+        </div>
+
+        <form action="#" method="post">
+            <label for="user-menu" class="hidden-label">Account menu</label>
+            <select id="user-menu" name="userMenu">
+                <option value="admin">Admin</option>
+                <option value="profile">My Profile</option>
+                <option value="logout">Logout</option>
+            </select>
+        </form>
+    </header>
+
+    <div class="layout">
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <ul>
+                <li>
+                    <a href="admin.html">
+                        <img src="images/images/icon-home.png" alt="Dashboard icon" width="28" height="28">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="manage-students.html">
+                        <img src="images/images/icon-students.png" alt="Manage Students icon" width="28" height="28">
+                        Manage Students
+                    </a>
+                </li>
+                <li>
+                    <a href="manage-manager.html">
+                        <img src="images/images/icon-students.png" alt="Manage managers icon" width="28" height="28">
+                        Manage managers
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="manage-staff.html">
+                        <img src="images/images/icon-students.png" alt="Manage staffs icon" width="28" height="28">
+                        Manage staffs
+                    </a>
+                </li>
+                <li>
+                    <a href="manage-food.html">
+                        <img src="images/images/icon-food.png" alt="Manage Food Items icon" width="28" height="28">
+                        Manage Food Items
+                    </a>
+                </li>
+                <li>
+                    <a href="reports.html">
+                        <img src="images/images/icon-reports.png" alt="View Reports icon" width="28" height="28">
+                        View Reports
+                    </a>
+                </li>
+                <li>
+                    <a href="logout.html">
+                        <img src="images/images/icon-logout.png" alt="Logout icon" width="28" height="28">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <h1>Manage Staffs</h1>
+            <p class="welcome">Add, view and remove canteen staff members</p>
+
+            <!-- Staff List -->
+            <div class="panel">
+                <h2>Staff List</h2>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Staff ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>STF001</td>
+                            <td>Rafiq Ahmed</td>
+                            <td>rafiq@campusbite.edu</td>
+                            <td>01811-000001</td>
+                            <td>Canteen Staff</td>
+                            <td><span class="status-active">Active</span></td>
+                            <td><a href="#" class="link-edit">Edit</a> | <a href="#" class="link-delete">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>STF002</td>
+                            <td>Mitu Akter</td>
+                            <td>mitu@campusbite.edu</td>
+                            <td>01811-000002</td>
+                            <td>Cashier</td>
+                            <td><span class="status-active">Active</span></td>
+                            <td><a href="#" class="link-edit">Edit</a> | <a href="#" class="link-delete">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>STF003</td>
+                            <td>Jahid Hasan</td>
+                            <td>jahid@campusbite.edu</td>
+                            <td>01811-000003</td>
+                            <td>Cook</td>
+                            <td><span class="status-inactive">Inactive</span></td>
+                            <td><a href="#" class="link-edit">Edit</a> | <a href="#" class="link-delete">Delete</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Add Staff -->
+            <div class="panel">
+                <h2>Add Staff</h2>
+
+                <div class="panel-body">
+                    <form action="#" method="post">
+                        <fieldset>
+                            <legend>Staff Information</legend>
+                            <table class="form-table">
+                                <tr>
+                                    <td><label for="person-name">Staff Name:</label></td>
+                                    <td><input type="text" id="person-name" name="personName" placeholder="Enter full name" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="person-email">Email:</label></td>
+                                    <td><input type="email" id="person-email" name="personEmail" placeholder="Enter email" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="person-phone">Phone:</label></td>
+                                    <td><input type="tel" id="person-phone" name="personPhone" placeholder="01XXX-XXXXXX" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="staff-role">Role:</label></td>
+                                    <td>
+                                        <select id="staff-role" name="staffRole">
+                                            <option value="Canteen Staff">Canteen Staff</option>
+                                            <option value="Cashier">Cashier</option>
+                                            <option value="Cook">Cook</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="person-password">Password:</label></td>
+                                    <td><input type="password" id="person-password" name="personPassword" placeholder="Enter password" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="person-status">Status:</label></td>
+                                    <td>
+                                        <select id="person-status" name="personStatus">
+                                            <option value="Active">Active</option>
+                                            <option value="Inactive">Inactive</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" value="Add Staff">
+                                        <input type="reset" value="Reset">
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright &copy; 2026 CampusBite. All Rights Reserved.</p>
+        <p>University Canteen Management System</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CampusBite admin reports page">
+    <meta name="author" content="rimon">
+    <title>Reports | CampusBite</title>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <header class="topbar">
+        <div class="brand">
+            <img src="images/images/logo.png" alt="CampusBite Logo" width="50" height="50">
+            <span>CampusBite</span>
+        </div>
+
+        <form action="#" method="post">
+            <label for="user-menu" class="hidden-label">Account menu</label>
+            <select id="user-menu" name="userMenu">
+                <option value="admin">Admin</option>
+                <option value="profile">My Profile</option>
+                <option value="logout">Logout</option>
+            </select>
+        </form>
+    </header>
+
+    <div class="layout">
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <ul>
+                <li>
+                    <a href="admin.html">
+                        <img src="images/images/icon-home.png" alt="Dashboard icon" width="28" height="28">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="manage-students.html">
+                        <img src="images/images/icon-students.png" alt="Manage Students icon" width="28" height="28">
+                        Manage Students
+                    </a>
+                </li>
+                <li>
+                    <a href="manage-manager.html">
+                        <img src="images/images/icon-students.png" alt="Manage managers icon" width="28" height="28">
+                        Manage managers
+                    </a>
+                </li>
+                <li>
+                    <a href="manage-staff.html">
+                        <img src="images/images/icon-students.png" alt="Manage staffs icon" width="28" height="28">
+                        Manage staffs
+                    </a>
+                </li>
+                <li>
+                    <a href="manage-food.html">
+                        <img src="images/images/icon-food.png" alt="Manage Food Items icon" width="28" height="28">
+                        Manage Food Items
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="reports.html">
+                        <img src="images/images/icon-reports.png" alt="View Reports icon" width="28" height="28">
+                        View Reports
+                    </a>
+                </li>
+                <li>
+                    <a href="logout.html">
+                        <img src="images/images/icon-logout.png" alt="Logout icon" width="28" height="28">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <h1>Reports</h1>
+            <p class="welcome">View canteen sales and order reports</p>
+
+            <!-- Summary Cards -->
+            <section class="stats">
+
+                <div class="stat-card card-green">
+                    <img src="images/images/stat-orders.png" alt="Total Orders" width="70" height="70">
+                    <div>
+                        <p class="number">45</p>
+                        <p class="caption">Total Orders</p>
+                    </div>
+                </div>
+
+                <div class="stat-card card-peach">
+                    <img src="images/images/stat-sales.png" alt="Total Sales" width="70" height="70">
+                    <div>
+                        <p class="number">৳8,500</p>
+                        <p class="caption">Total Sales</p>
+                    </div>
+                </div>
+
+                <div class="stat-card card-green">
+                    <img src="images/images/stat-students.png" alt="Total Students" width="70" height="70">
+                    <div>
+                        <p class="number">120</p>
+                        <p class="caption">Total Students</p>
+                    </div>
+                </div>
+
+                <div class="stat-card card-peach">
+                    <img src="images/images/stat-food.png" alt="Food Items" width="70" height="70">
+                    <div>
+                        <p class="number">25</p>
+                        <p class="caption">Food Items</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Filter Report -->
+            <div class="panel">
+                <h2>Filter Report</h2>
+
+                <div class="panel-body">
+                    <form action="#" method="post">
+                        <fieldset>
+                            <legend>Report Options</legend>
+                            <table class="form-table">
+                                <tr>
+                                    <td><label for="from-date">From Date:</label></td>
+                                    <td><input type="date" id="from-date" name="fromDate"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="to-date">To Date:</label></td>
+                                    <td><input type="date" id="to-date" name="toDate"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="report-type">Report Type:</label></td>
+                                    <td>
+                                        <select id="report-type" name="reportType">
+                                            <option value="daily">Daily Sales</option>
+                                            <option value="weekly">Weekly Sales</option>
+                                            <option value="monthly">Monthly Sales</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><input type="submit" value="Generate Report"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Recent Orders -->
+            <div class="panel">
+                <h2>Recent Orders</h2>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Student ID</th>
+                            <th>Food Item</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ORD001</td>
+                            <td>STU001</td>
+                            <td>Burger</td>
+                            <td>2</td>
+                            <td>৳240</td>
+                            <td>2026-11-01</td>
+                        </tr>
+                        <tr>
+                            <td>ORD002</td>
+                            <td>STU002</td>
+                            <td>Pizza</td>
+                            <td>1</td>
+                            <td>৳180</td>
+                            <td>2026-11-01</td>
+                        </tr>
+                        <tr>
+                            <td>ORD003</td>
+                            <td>STU003</td>
+                            <td>French Fries</td>
+                            <td>3</td>
+                            <td>৳240</td>
+                            <td>2026-11-01</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">Total</td>
+                            <td colspan="2">৳660</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright &copy; 2026 CampusBite. All Rights Reserved.</p>
+        <p>University Canteen Management System</p>
+    </footer>
+
+</body>
+
+</html>

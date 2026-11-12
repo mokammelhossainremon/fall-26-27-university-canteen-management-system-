@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CampusBite staff notices page">
+    <meta name="author" content="rimon">
+    <title>Canteen Notices | CampusBite</title>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <header class="topbar">
+        <div class="brand">
+            <img src="images/images/logo.png" alt="CampusBite Logo" width="50" height="50">
+            <span>CampusBite</span>
+        </div>
+
+        <form action="#" method="post">
+            <label for="user-menu" class="hidden-label">Account menu</label>
+            <select id="user-menu" name="userMenu">
+                <option value="staff">Staff</option>
+                <option value="profile">My Profile</option>
+                <option value="logout">Logout</option>
+            </select>
+        </form>
+    </header>
+
+    <div class="layout">
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <ul>
+                <li>
+                    <a href="staff.html">
+                        <img src="images/images/icon-home.png" alt="Dashboard icon" width="28" height="28">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="menu.html">
+                        <img src="images/images/icon-menu.png" alt="Food Menu icon" width="28" height="28">
+                        Food Menu
+                    </a>
+                </li>
+                <li>
+                    <a href="staff-availability.html">
+                        <img src="images/images/icon-availability.png" alt="Food Availability icon" width="28" height="28">
+                        Food Availability
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="canteen-notices.html">
+                        <img src="images/images/icon-notices.png" alt="Canteen Notices icon" width="28" height="28">
+                        Canteen Notices
+                    </a>
+                </li>
+                <li>
+                    <a href="logout.html">
+                        <img src="images/images/icon-logout.png" alt="Logout icon" width="28" height="28">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <h1>Canteen Notices</h1>
+            <p class="welcome">Latest notices for canteen staff</p>
+
+            <!-- Notice List -->
+            <section>
+                <article class="notice-card">
+                    <img src="images/images/notice-megaphone.png" alt="Notice icon" width="40" height="40">
+                    <div>
+                        <h2>Keep the canteen clean.</h2>
+                        <p class="notice-date">Posted on 2026-11-01</p>
+                        <p class="notice-text">Please keep tables and floors clean after every service.</p>
+                    </div>
+                </article>
+                <article class="notice-card">
+                    <img src="images/images/notice-megaphone.png" alt="Notice icon" width="40" height="40">
+                    <div>
+                        <h2>Friday closing time</h2>
+                        <p class="notice-date">Posted on 2026-10-30</p>
+                        <p class="notice-text">The canteen will close at 8:00 PM on Friday.</p>
+                    </div>
+                </article>
+                <article class="notice-card">
+                    <img src="images/images/notice-megaphone.png" alt="Notice icon" width="40" height="40">
+                    <div>
+                        <h2>New item: Tea</h2>
+                        <p class="notice-date">Posted on 2026-10-28</p>
+                        <p class="notice-text">Tea is now available at the counter for ৳30.</p>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright &copy; 2026 CampusBite. All Rights Reserved.</p>
+        <p>University Canteen Management System</p>
+    </footer>
+
+</body>
+
+</html>

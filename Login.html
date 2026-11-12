@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>
+        Login Form
+    </title>
+</head>
+
+
+<body>
+
+    <div class="login-container">
+
+        <div class="left-side">
+
+            <h3>Login Form</h3>
+
+
+            <img src="Images/login.png" alt="login Page" width="350">
+
+            <p>Welcome to the University Canteen Management System! Enjoy a simple and convenient way to explore food
+                menus, place orders, and manage your canteen experience</p>
+
+        </div>
+
+        <div class="right-side">
+            <h2>Welcome back</h2>
+
+            <p>Please Login to your account </p>
+
+            <form action="#" method="post">
+
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+
+                <label for="password">Password</label><br>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required><br><br>
+
+                <label>Role:</label><br>
+                <input type="radio" id="student" name="role" value="student">
+                <label for="student">Student</label>
+
+                <input type="radio" id="admin" name="role" value="admin">
+                <label for="admin">Admin</label>
+
+                <input type="radio" id="canteenstaff" name="role" value="canteenstaff">
+                <label for="canteenstaff">Canteen Staff</label>
+
+                <input type="radio" id="canteenmanager" name="role" value="canteenmanager">
+                <label for="canteenmanager">Canteen Manager</label><br><br>
+
+                <div class="remember-me">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember Me</label>
+
+                </div>
+
+                <input type="submit" value="Login">
+                <input type="reset" value="Reset">
+
+                <p class="signup">Don't have an account?
+
+                    <a href="Registration.html">Create Account </a>
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

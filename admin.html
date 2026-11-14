@@ -1,198 +1,394 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CampusBite admin dashboard">
-    <meta name="author" content="rimon">
-    <title>Admin Dashboard | CampusBite</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Admin dashboard of CampusBite">
+  <title>Admin Dashboard | CampusBite</title>
+  <link rel="stylesheet" href="css/stylea.css">
 </head>
-
 <body>
 
-    <!-- Top Bar -->
-    <header class="topbar">
-        <div class="brand">
-            <img src="images/images/logo.png" alt="CampusBite Logo" width="50" height="50">
-            <span>CampusBite</span>
+  <header class="header">
+    <div>
+          <img src="images/images/logo.png" alt="CampusBite Logo" width="50" height="50">
+    <a href="admin.html" class="logo">Uni<span>Canteen</span></a>
+    </div>
+    <div class="user-info">
+      <span class="badge admin">Admin</span>
+      <span>Welcome, Rimon </span>
+      <a href="login.html" class="btn btn-small btn-light">Logout</a>
+    </div>
+  </header>
+
+  <nav class="topnav">
+    
+    <button type="button" id="nav-statsSection" onclick="showSection('statsSection')">
+       <img src="images/images/icon-reports.png" alt="" width="20" height="20">
+   <span>Statistics Report</span>
+      </button>
+
+    <button type="button" id="nav-usersSection" onclick="showSection('usersSection')">
+             <img src="images/images/qa-students.png" alt="" width="20" height="20">
+      <span>Manage Users</span>
+    </button>
+    <button type="button" id="nav-foodSection" onclick="showSection('foodSection')">
+           <img src="images/images/icon-view-food.png" alt="" width="20" height="20">
+      <span>Manage Food Items</span>
+    </button>
+    <button type="button" id="nav-rulesSection" onclick="showSection('rulesSection')">
+                 <img src="images/images/stat-orders.png" alt="" width="20" height="20">
+      <span>Canteen Rules</span>
+    </button>
+    <button type="button" id="nav-logSection" onclick="showSection('logSection')">
+                       <img src="images/images/icon-add.png" alt="" width="20" height="20">
+      <span>Activity log</span> 
+    </button>
+  </nav>
+
+  <main class="container">
+
+   
+    <section id="statsSection" class="page-section">
+      <h2 class="page-title">Canteen Statistics Report</h2>
+      <p class="page-subtitle">A live summary of users, food and orders. <span id="reportTime" class="hint"></span></p>
+
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-number" id="statUsers">0</div><div class="stat-label">Total users</div></div>
+        <div class="stat-card"><div class="stat-number" id="statActive">0</div><div class="stat-label">Active accounts</div></div>
+        <div class="stat-card"><div class="stat-number" id="statBlocked">0</div><div class="stat-label">Blocked accounts</div></div>
+        <div class="stat-card"><div class="stat-number" id="statFoods">0</div><div class="stat-label">Food items</div></div>
+        <div class="stat-card"><div class="stat-number" id="statLowStock">0</div><div class="stat-label">Low or no stock</div></div>
+        <div class="stat-card"><div class="stat-number" id="statOrders">0</div><div class="stat-label">Total orders</div></div>
+        <div class="stat-card"><div class="stat-number" id="statSales">0</div><div class="stat-label">Sales, completed (Tk)</div></div>
+        <div class="stat-card"><div class="stat-number" id="statAverage">0</div><div class="stat-label">Average order (Tk)</div></div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <h3>Users by role</h3>
+            <div id="roleChart"></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h3>Food items by category</h3>
+            <div id="categoryChart"></div>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn" onclick="generateReport()">Refresh report</button>
+    </section>
+
+    <section id="usersSection" class="page-section">
+      <h2 class="page-title">Manage Users</h2>
+      <p class="page-subtitle">Create, view, edit, delete and search the accounts of admins, managers, staff and students.</p>
+
+      <div id="userMessage" class="message"></div>
+
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <h3 id="userFormTitle">Add New User</h3>
+            <form id="userForm" onsubmit="return saveUser()">
+              <fieldset>
+                <legend>User Details</legend>
+                <table class="form-table">
+                  <tr>
+                    <td><label for="userName">Full Name:</label></td>
+                    <td>
+                      <input type="text" id="userName" placeholder="e.g. Nadia Islam">
+                      <span class="error" id="userNameError"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label for="userUsername">Username:</label></td>
+                    <td>
+                      <input type="text" id="userUsername" placeholder="At least 4 characters">
+                      <span class="error" id="userUsernameError"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label for="userEmail">Email:</label></td>
+                    <td>
+                      <input type="email" id="userEmail" placeholder="name@campusbite.edu">
+                      <span class="error" id="userEmailError"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label for="userPassword">Password:</label></td>
+                    <td>
+                      <input type="password" id="userPassword" placeholder="At least 8 characters">
+                      <span class="error" id="userPasswordError"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label for="userRole">Role:</label></td>
+                    <td>
+                      <select id="userRole">
+                        <option value="">-- Select Role --</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Staff">Staff</option>
+                        <option value="Student">Student</option>
+                      </select>
+                      <span class="error" id="userRoleError"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Status:</td>
+                    <td>
+                      <input type="radio" id="statusActive" name="userStatus" value="Active" checked>
+                      <label for="statusActive" class="option-label">Active</label>
+                      <input type="radio" id="statusBlocked" name="userStatus" value="Blocked">
+                      <label for="statusBlocked" class="option-label">Blocked</label>
+                    </td>
+                  </tr>
+                </table>
+              </fieldset>
+              <input type="submit" id="userSaveButton" class="btn" value="Add User">
+              <button type="button" class="btn btn-secondary" onclick="resetUserForm()">Cancel</button>
+            </form>
+          </div>
         </div>
 
-        <form action="#" method="post">
-            <label for="user-menu" class="hidden-label">Account menu</label>
-            <select id="user-menu" name="userMenu">
-                <option value="admin">Admin</option>
-                <option value="profile">My Profile</option>
-                <option value="logout">Logout</option>
-            </select>
-        </form>
-    </header>
+        <div class="col-wide">
+          <div class="card">
+            <h3>All Users</h3>
+            <div class="search-bar">
+              <input type="text" id="userSearch" placeholder="Search by name, username, email or id..." onkeyup="renderUsers()">
+              <select id="userRoleFilter" onchange="renderUsers()">
+                <option value="All">All roles</option>
+                <option value="Admin">Admin</option>
+                <option value="Manager">Manager</option>
+                <option value="Staff">Staff</option>
+                <option value="Student">Student</option>
+              </select>
+              <select id="userStatusFilter" onchange="renderUsers()">
+                <option value="All">Any status</option>
+                <option value="Active">Active</option>
+                <option value="Blocked">Blocked</option>
+              </select>
+            </div>
+            <p class="result-count" id="userCount"></p>
+            <div class="table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr><th>ID</th><th>Name</th><th>Username</th><th>Role</th><th>Status</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="userTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="layout">
 
-        <!-- Sidebar Navigation -->
-        <nav class="sidebar">
-            <ul>
-                <li class="active">
-                    <a href="admin.html">
-                        <img src="images/images/icon-home.png" alt="Dashboard icon" width="28" height="28">
-                        Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a href="manage-students.html">
-                        <img src="images/images/icon-students.png" alt="Manage Students icon" width="28" height="28">
-                        Manage Students
-                    </a>
-                </li>
-                <li>
-                    <a href="manage-manager.html">
-                        <img src="images/images/icon-students.png" alt="Manage managers icon" width="28" height="28">
-                        Manage managers
-                    </a>
-                </li>
-                <li>
-                    <a href="manage-staff.html">
-                        <img src="images/images/icon-students.png" alt="Manage staffs icon" width="28" height="28">
-                        Manage staffs
-                    </a>
-                </li>
-                <li>
-                    <a href="manage-food.html">
-                        <img src="images/images/icon-food.png" alt="Manage Food Items icon" width="28" height="28">
-                        Manage Food Items
-                    </a>
-                </li>
-                <li>
-                    <a href="reports.html">
-                        <img src="images/images/icon-reports.png" alt="View Reports icon" width="28" height="28">
-                        View Reports
-                    </a>
-                </li>
-                <li>
-                    <a href="logout.html">
-                        <img src="images/images/icon-logout.png" alt="Logout icon" width="28" height="28">
-                        Logout
-                    </a>
-                </li>
-            </ul>
-        </nav>
+   
+    <section id="foodSection" class="page-section">
+      <h2 class="page-title">Manage Food Items</h2>
+      <p class="page-subtitle">Add new food items, edit price and stock, remove items and search the menu.</p>
 
-        <!-- Main Content -->
-        <main>
-            <h1>Admin Dashboard</h1>
-            <p class="welcome">Welcome, Admin!</p>
+      <div id="foodMessage" class="message"></div>
 
-            <!-- Summary Cards -->
-            <section class="stats">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <h3 id="foodFormTitle">Add New Food Item</h3>
+            <form id="foodForm" onsubmit="return saveFood()">
+              <fieldset>
+                <legend>Food Details</legend>
+                <table class="form-table">
+                  <tr>
+                    <td><label for="foodName">Name:</label></td>
+                    <td>
+                      <input type="text" id="foodName" placeholder="e.g. Chicken Biryani">
+                      <span class="error" id="foodNameError"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label for="foodCategory">Category:</label></td>
+                    <td>
+                      <select id="foodCategory">
+                        <option value="">-- Select Category --</option>
+                        <option value="Meals">Meals</option>
+                        <option value="Snacks">Snacks</option>
+                        <option value="Drinks">Drinks</option>
+                        <option value="Desserts">Desserts</option>
+                      </select>
+                      <span class="error" id="foodCategoryError"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label for="foodPrice">Price (Tk):</label></td>
+                    <td>
+                      <input type="number" id="foodPrice" min="1" max="1000" placeholder="1 - 1000">
+                      <span class="error" id="foodPriceError"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label for="foodQuantity">Quantity in stock:</label></td>
+                    <td>
+                      <input type="number" id="foodQuantity" min="0" max="500" placeholder="0 - 500">
+                      <span class="error" id="foodQuantityError"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Status:</td>
+                    <td>
+                      <input type="radio" id="foodAvailable" name="foodStatus" value="Available" checked>
+                      <label for="foodAvailable" class="option-label">Available</label>
+                      <input type="radio" id="foodUnavailable" name="foodStatus" value="Unavailable">
+                      <label for="foodUnavailable" class="option-label">Unavailable</label>
+                    </td>
+                  </tr>
+                </table>
+              </fieldset>
+              <input type="submit" id="foodSaveButton" class="btn" value="Add Food Item">
+              <button type="button" class="btn btn-secondary" onclick="resetFoodForm()">Cancel</button>
+            </form>
+          </div>
+        </div>
 
-                <div class="stat-card card-green">
-                    <img src="images/images/stat-students.png" alt="Total Students" width="70" height="70">
-                    <div>
-                        <p class="number">120</p>
-                        <p class="caption">Total Students</p>
-                    </div>
-                </div>
+        <div class="col-wide">
+          <div class="card">
+            <h3>Food Menu</h3>
+            <div class="search-bar">
+              <input type="text" id="foodSearch" placeholder="Search by name, category or id..." onkeyup="renderFoods()">
+              <select id="foodCategoryFilter" onchange="renderFoods()">
+                <option value="All">All categories</option>
+                <option value="Meals">Meals</option>
+                <option value="Snacks">Snacks</option>
+                <option value="Drinks">Drinks</option>
+                <option value="Desserts">Desserts</option>
+              </select>
+              <select id="foodStatusFilter" onchange="renderFoods()">
+                <option value="All">Any status</option>
+                <option value="Available">Available</option>
+                <option value="Unavailable">Unavailable</option>
+              </select>
+            </div>
+            <p class="result-count" id="foodCount"></p>
+            <div class="table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr><th>ID</th><th>Name</th><th>Category</th><th>Price</th><th>Stock</th><th>Status</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="foodTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                <div class="stat-card card-peach">
-                    <img src="images/images/stat-food.png" alt="Food Items" width="70" height="70">
-                    <div>
-                        <p class="number">25</p>
-                        <p class="caption">Food Items</p>
-                    </div>
-                </div>
 
-                <div class="stat-card card-green">
-                    <img src="images/images/stat-orders.png" alt="Total Orders" width="70" height="70">
-                    <div>
-                        <p class="number">45</p>
-                        <p class="caption">Total Orders</p>
-                    </div>
-                </div>
+   
+    <section id="rulesSection" class="page-section">
+      <h2 class="page-title">Canteen Rules</h2>
+      <p class="page-subtitle">Set the service charge, order limits and stock warning for the whole canteen.</p>
 
-                <div class="stat-card card-peach">
-                    <img src="images/images/stat-sales.png" alt="Total Sales" width="70" height="70">
-                    <div>
-                        <p class="number">৳8,500</p>
-                        <p class="caption">Total Sales</p>
-                    </div>
-                </div>
+      <div id="rulesMessage" class="message"></div>
 
-            </section>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <h3>Change rules</h3>
+            <form onsubmit="return saveRules()">
+              <fieldset>
+                <legend>Ordering rules</legend>
+                <table class="form-table">
+                  <tr>
+                    <td><label for="ruleServiceCharge">Service charge (%):</label></td>
+                    <td>
+                      <input type="number" id="ruleServiceCharge" min="0" max="20" onchange="previewRules()" onkeyup="previewRules()">
+                      <span class="error" id="ruleServiceChargeError"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label for="ruleMaxItems">Max items per order:</label></td>
+                    <td>
+                      <input type="number" id="ruleMaxItems" min="1" max="20" onchange="previewRules()" onkeyup="previewRules()">
+                      <span class="error" id="ruleMaxItemsError"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label for="ruleLowStock">Low stock limit:</label></td>
+                    <td>
+                      <input type="number" id="ruleLowStock" min="0" max="50">
+                      <span class="error" id="ruleLowStockError"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label for="ruleCancelMinutes">Cancel window (minutes):</label></td>
+                    <td>
+                      <input type="number" id="ruleCancelMinutes" min="0" max="60">
+                      <span class="error" id="ruleCancelMinutesError"></span>
+                    </td>
+                  </tr>
+                </table>
+              </fieldset>
+              <input type="submit" class="btn" value="Save Rules">
+              <button type="button" class="btn btn-secondary" onclick="restoreDefaultRules()">Restore Defaults</button>
+            </form>
+          </div>
+        </div>
 
-            <!-- Dashboard Panels -->
-            <section class="panels">
+        <div class="col">
+          <div class="card">
+            <h3>Rules in use now</h3>
+            <table class="data-table">
+              <tbody id="currentRulesBody"></tbody>
+            </table>
+            <div class="result-box">
+              <p><strong>Preview:</strong> with the values in the form,</p>
+              <p id="rulesPreview"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                <!-- Recent Users -->
-                <div class="panel users">
-                    <!-- Recent Users -->
-                    <div class="panel-head">
-                        <h2>Recent Users</h2>
-                        <a href="manage-students.html">View All &rarr;</a>
-                    </div>
 
-                    <table class="users-table">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Student ID</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Rahim Ahmed</td>
-                                <td>STU001</td>
-                                <td><span class="status-active">Active</span></td>
-                            </tr>
-                            <tr>
-                                <td>Sara Khan</td>
-                                <td>STU002</td>
-                                <td><span class="status-active">Active</span></td>
-                            </tr>
-                            <tr>
-                                <td>Tawhid Islam</td>
-                                <td>STU003</td>
-                                <td><span class="status-active">Active</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+   
+    <section id="logSection" class="page-section">
+      <h2 class="page-title">Activity Log</h2>
+      <p class="page-subtitle">Every important action in the system, newest first.</p>
 
-                <!-- Quick Actions -->
-                <div class="panel actions">
-                    <h2>Quick Actions</h2>
+      <div class="card">
+        <div class="search-bar">
+          <select id="logTypeFilter" onchange="renderLog()">
+            <option value="All">All activity types</option>
+            <option value="User">User</option>
+            <option value="Food">Food</option>
+            <option value="Order">Order</option>
+            <option value="Security">Security</option>
+            <option value="Settings">Settings</option>
+          </select>
+          <select id="logUserFilter" onchange="renderLog()">
+            <option value="All">Done by anyone</option>
+            <option value="admin">admin</option>
+            <option value="manager">manager</option>
+            <option value="staff">staff</option>
+          </select>
+          <button type="button" class="btn btn-danger" onclick="clearLog()">Clear Log</button>
+        </div>
+        <p class="result-count" id="logCount"></p>
+        <div class="notice-board" id="logBoard"></div>
+      </div>
+    </section>
 
-                    <div class="action-row">
-                        <a href="manage-students.html" class="action-btn">
-                            <img src="images/images/icon-students.png" alt="Manage Students" width="40" height="40">
-                            <span>Manage Students</span>
-                        </a>
+  </main>
 
-                        <a href="manage-food.html" class="action-btn orange">
-                            <img src="images/images/icon-food.png" alt="Manage Food Items" width="40" height="40">
-                            <span>Manage Food Items</span>
-                        </a>
+  <footer class="footer">
+    &copy; 2026 UniCANTEEN &middot; University Canteen Management System
+  </footer>
 
-                        <a href="reports.html" class="action-btn">
-                            <img src="images/images/icon-reports.png" alt="View Reports" width="40" height="40">
-                            <span>View Reports</span>
-                        </a>
-                    </div>
-                </div>
-
-            </section>
-
-        </main>
-
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>Copyright &copy; 2026 CampusBite. All Rights Reserved.</p>
-        <p>University Canteen Management System</p>
-    </footer>
-
+  <script src="js/dataa.js"></script>
+  <script src="js/commona.js"></script>
+  <script src="js/admina.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,115 @@
+/* =====================================================================
+   style.css  -  ONE external style sheet linked from every page
+   CampusBite colours: green #1f4a3a, orange #f47f2a, cream #fdf3ec
+   ===================================================================== */
+
+/* ---------- 1. Base ---------- */
+* { box-sizing: border-box; }
+body { font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #222; margin: 0; background-color: #fdf3ec; }
+a { color: #1f4a3a; }
+textarea { resize: none; }
+h2, h3 { margin: 0 0 12px 0; }
+
+/* ---------- 2. Header, navigation, layout, footer ---------- */
+.header { background-color: #1f4a3a; color: #fff; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; }
+.logo { color: #fff; font-size: 26px; font-weight: bold; text-decoration: none; }
+.logo span { color: #f47f2a; }
+.user-info { display: flex; align-items: center; gap: 12px; }
+
+.topnav { background-color: #153629; display: flex; flex-wrap: wrap; position: sticky; top: 0; z-index: 10; }
+.topnav a, .topnav button { color: #fff; background: none; border: none; padding: 14px 22px; font-size: 15px; text-decoration: none; cursor: pointer; }
+.topnav a:hover, .topnav button:hover { background-color: #e96b35; }
+.topnav .active { background-color: #f47f2a; font-weight: bold; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 24px 20px; }
+.footer { background-color: #263b32; color: #fff; text-align: center; padding: 12px; margin-top: 25px; }
+
+/* ---------- 3. Page sections (one visible at a time) ---------- */
+.page-section { display: none; }
+.page-title { font-size: 28px; margin: 0 0 4px 0; }
+.page-subtitle { margin: 0 0 18px 0; font-size: 15px; color: #555; }
+
+/* ---------- 4. Cards and rows ---------- */
+.card { background-color: #fff; border: 1px solid #e6dcd2; border-radius: 8px; padding: 18px 20px; margin-bottom: 18px; }
+.row { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-start; }
+.col { flex: 1; min-width: 300px; }
+.col-wide { flex: 2; min-width: 380px; }
+.col .card, .col-wide .card { margin-bottom: 0; }
+.hint { color: #777; font-size: 13px; }
+.result-count { margin: 8px 0; color: #555; }
+.result-box { background-color: #fde9da; border-radius: 6px; padding: 12px 14px; margin-top: 14px; }
+
+/* ---------- 5. Buttons and badges ---------- */
+.btn { display: inline-block; background-color: #f47f2a; color: #fff; border: none; border-radius: 4px; padding: 10px 20px; font-size: 15px; font-weight: bold; text-decoration: none; cursor: pointer; transition: background-color 0.2s, transform 0.2s; }
+.btn:hover { background-color: #e96b35; transform: scale(1.03); }
+.btn-small { padding: 5px 12px; font-size: 13px; }
+.btn-light { background-color: #fff; color: #1f4a3a; }
+.btn-secondary { background-color: #1f4a3a; }
+.btn-success { background-color: #2e7d32; }
+.btn-danger { background-color: #c0392b; }
+.btn-block { width: 100%; }
+
+.badge { display: inline-block; border-radius: 12px; padding: 3px 12px; font-size: 13px; font-weight: bold; color: #fff; }
+.badge.admin { background-color: #c0392b; }
+.badge.manager { background-color: #1f4a3a; }
+.badge.staff { background-color: #6a4c93; }
+.badge.student { background-color: #2a6fb0; }
+.badge.green { background-color: #cfeccf; color: #1d6b2a; }
+.badge.red { background-color: #f8d7d3; color: #a32d22; }
+.badge.orange { background-color: #f47f2a; }
+
+/* ---------- 6. Forms ---------- */
+fieldset { border: 1px solid #e0d3c8; border-radius: 6px; padding: 12px 16px 16px 16px; margin: 0 0 14px 0; }
+legend { font-weight: bold; font-size: 16px; color: #1f4a3a; padding: 0 8px; }
+.form-table { border-collapse: collapse; width: 100%; }
+.form-table td { padding: 7px 10px 7px 0; vertical-align: top; }
+.form-table td:first-child { width: 36%; font-weight: bold; }
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], select, textarea {
+  width: 100%; padding: 8px; border: 1px solid #e0d3c8; border-radius: 4px; font-size: 14px; background-color: #fff; }
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="number"]:focus, select:focus { outline: 2px solid #f47f2a; }
+input[type="radio"], input[type="checkbox"] { width: auto; }
+.option-label { font-weight: normal; margin-right: 12px; }
+.error { display: block; color: #c62828; font-size: 12px; margin-top: 3px; }
+
+.message { display: none; padding: 12px 16px; border-radius: 6px; margin-bottom: 14px; }
+.message.success { background-color: #cfeccf; color: #1d6b2a; }
+.message.error { background-color: #f8d7d3; color: #a32d22; }
+.message.info { background-color: #fdeec9; color: #7a5a00; }
+
+/* ---------- 7. Search bar and tables ---------- */
+.search-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+.search-bar input[type="text"] { flex: 2; min-width: 160px; }
+.search-bar select { flex: 1; min-width: 120px; width: auto; }
+.table-wrapper { overflow-x: auto; }
+.data-table { border-collapse: collapse; width: 100%; }
+.data-table th { background-color: #f0ece8; text-align: left; padding: 10px 12px; font-size: 14px; }
+.data-table td { padding: 8px 12px; border-top: 1px solid #eee; vertical-align: middle; }
+.data-table tr:nth-child(even) td { background-color: #fcfaf8; }
+.empty-row { text-align: center; color: #777; padding: 18px; }
+
+/* ---------- 8. Statistics and bar charts ---------- */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-bottom: 18px; }
+.stat-card { background-color: #e3eee6; border: 1px solid #e6dcd2; border-radius: 8px; padding: 18px; }
+.stat-card:nth-child(even) { background-color: #fde3d0; }
+.stat-number { font-size: 30px; font-weight: bold; }
+.stat-label { font-size: 15px; }
+.bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.bar-label { width: 110px; font-size: 13px; }
+.bar-track { flex: 1; background-color: #f0ece8; border-radius: 4px; height: 18px; }
+.bar-fill { background-color: #f47f2a; height: 18px; border-radius: 4px; }
+.bar-value { width: 40px; font-size: 13px; text-align: right; }
+
+/* ---------- 9. Notice board (activity log) ---------- */
+.notice-board { max-height: 420px; overflow-y: auto; }
+.notice-item { background-color: #fafafa; border-left: 5px solid #999; padding: 10px 14px; margin-bottom: 8px; transition: transform 0.2s; }
+.notice-item:hover { transform: scale(1.01); }
+.notice-item.log-user { border-left-color: #2a6fb0; }
+.notice-item.log-food { border-left-color: #f47f2a; }
+.notice-item.log-security { border-left-color: #c0392b; }
+.notice-item.log-settings { border-left-color: #6a4c93; }
+
+/* ---------- 10. Login page ---------- */
+.auth-box { max-width: 520px; margin: 0 auto; }
+.auth-switch { text-align: center; }
+.demo-accounts { width: 100%; border-collapse: collapse; }
+.demo-accounts td { padding: 6px 8px; border-top: 1px solid #eee; }

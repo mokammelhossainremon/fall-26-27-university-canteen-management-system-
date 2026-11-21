@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CampusBite admin food management page">
+    <meta name="author" content="rimon">
+    <title>Manage Food Items | CampusBite</title>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <header class="topbar">
+        <div class="brand">
+            <img src="images/images/logo.png" alt="CampusBite Logo" width="50" height="50">
+            <span>CampusBite</span>
+        </div>
+
+        <form action="#" method="post">
+            <label for="user-menu" class="hidden-label">Account menu</label>
+            <select id="user-menu" name="userMenu">
+                <option value="admin">Admin</option>
+                <option value="profile">My Profile</option>
+                <option value="logout">Logout</option>
+            </select>
+        </form>
+    </header>
+
+    <div class="layout">
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <ul>
+                <li>
+                    <a href="admin.html">
+                        <img src="images/images/icon-home.png" alt="Dashboard icon" width="28" height="28">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="manage-students.html">
+                        <img src="images/images/icon-students.png" alt="Manage Students icon" width="28" height="28">
+                        Manage Students
+                    </a>
+                </li>
+                <li>
+                    <a href="manage-manager.html">
+                        <img src="images/images/icon-students.png" alt="Manage managers icon" width="28" height="28">
+                        Manage managers
+                    </a>
+                </li>
+                <li>
+                    <a href="manage-staff.html">
+                        <img src="images/images/icon-students.png" alt="Manage staffs icon" width="28" height="28">
+                        Manage staffs
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="manage-food.html">
+                        <img src="images/images/icon-food.png" alt="Manage Food Items icon" width="28" height="28">
+                        Manage Food Items
+                    </a>
+                </li>
+                <li>
+                    <a href="reports.html">
+                        <img src="images/images/icon-reports.png" alt="View Reports icon" width="28" height="28">
+                        View Reports
+                    </a>
+                </li>
+                <li>
+                    <a href="logout.html">
+                        <img src="images/images/icon-logout.png" alt="Logout icon" width="28" height="28">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <h1>Manage Food Items</h1>
+            <p class="welcome">Add, edit and remove food items</p>
+
+            <!-- Food Items -->
+            <div class="panel">
+                <h2>Food Items</h2>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Food Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Availability</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="images/images/burger.jpg" alt="Burger" width="55" height="55">
+                            </td>
+                            <td>Burger</td>
+                            <td>Fast Food</td>
+                            <td>৳120</td>
+                            <td><span class="status-available">Available</span></td>
+                            <td><a href="#" class="link-edit">Edit</a> | <a href="#" class="link-delete">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/images/pizza.jpg" alt="Pizza" width="55" height="55">
+                            </td>
+                            <td>Pizza</td>
+                            <td>Fast Food</td>
+                            <td>৳180</td>
+                            <td><span class="status-available">Available</span></td>
+                            <td><a href="#" class="link-edit">Edit</a> | <a href="#" class="link-delete">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/images/french-fries.jpg" alt="French Fries" width="55" height="55">
+                            </td>
+                            <td>French Fries</td>
+                            <td>Snacks</td>
+                            <td>৳80</td>
+                            <td><span class="status-available">Available</span></td>
+                            <td><a href="#" class="link-edit">Edit</a> | <a href="#" class="link-delete">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/images/tea.jpg" alt="Tea" width="55" height="55">
+                            </td>
+                            <td>Tea</td>
+                            <td>Beverage</td>
+                            <td>৳30</td>
+                            <td><span class="status-available">Available</span></td>
+                            <td><a href="#" class="link-edit">Edit</a> | <a href="#" class="link-delete">Delete</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Add Food Item -->
+            <div class="panel">
+                <h2>Add Food Item</h2>
+
+                <div class="panel-body">
+                    <form action="#" method="post" enctype="multipart/form-data">
+                        <fieldset>
+                            <legend>Food Details</legend>
+                            <table class="form-table">
+                                <tr>
+                                    <td><label for="food-name">Food Name:</label></td>
+                                    <td><input type="text" id="food-name" name="foodName" placeholder="e.g. Pasta" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="food-category">Category:</label></td>
+                                    <td>
+                                        <select id="food-category" name="foodCategory">
+                                            <option value="Fast Food">Fast Food</option>
+                                            <option value="Snacks">Snacks</option>
+                                            <option value="Beverage">Beverage</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="food-price">Price (৳):</label></td>
+                                    <td><input type="number" id="food-price" name="foodPrice" placeholder="e.g. 100" min="0" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="food-availability">Availability:</label></td>
+                                    <td>
+                                        <select id="food-availability" name="foodAvailability">
+                                            <option value="available">Available</option>
+                                            <option value="unavailable">Unavailable</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="food-image">Food Image:</label></td>
+                                    <td><input type="file" id="food-image" name="foodImage"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" value="Add Item">
+                                        <input type="reset" value="Reset">
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright &copy; 2026 CampusBite. All Rights Reserved.</p>
+        <p>University Canteen Management System</p>
+    </footer>
+
+</body>
+
+</html>

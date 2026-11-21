@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CampusBite manager add food page">
+    <meta name="author" content="rimon">
+    <title>Add Food Item | CampusBite</title>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <header class="topbar">
+        <div class="brand">
+            <img src="images/images/logo.png" alt="CampusBite Logo" width="50" height="50">
+            <span>CampusBite</span>
+        </div>
+
+        <form action="#" method="post">
+            <label for="user-menu" class="hidden-label">Account menu</label>
+            <select id="user-menu" name="userMenu">
+                <option value="manager">Manager</option>
+                <option value="profile">My Profile</option>
+                <option value="logout">Logout</option>
+            </select>
+        </form>
+    </header>
+
+    <div class="layout">
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <ul>
+                <li>
+                    <a href="manager.html">
+                        <img src="images/images/icon-home.png" alt="Dashboard icon" width="28" height="28">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="view-food-items.html">
+                        <img src="images/images/icon-view-food.png" alt="View Food Items icon" width="28" height="28">
+                        View Food Items
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="add-food-item.html">
+                        <img src="images/images/icon-add.png" alt="Add Food Item icon" width="28" height="28">
+                        Add Food Item
+                    </a>
+                </li>
+                <li>
+                    <a href="food-availability.html">
+                        <img src="images/images/icon-availability.png" alt="Food Availability icon" width="28" height="28">
+                        Food Availability
+                    </a>
+                </li>
+                <li>
+                    <a href="logout.html">
+                        <img src="images/images/icon-logout.png" alt="Logout icon" width="28" height="28">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <h1>Add Food Item</h1>
+            <p class="welcome">Fill in the details to add a new food item</p>
+
+            <!-- New Food Item -->
+            <div class="panel">
+                <h2>New Food Item</h2>
+
+                <div class="panel-body">
+                    <form action="#" method="post" enctype="multipart/form-data">
+                        <fieldset>
+                            <legend>Food Details</legend>
+                            <table class="form-table">
+                                <tr>
+                                    <td><label for="food-name">Food Name:</label></td>
+                                    <td><input type="text" id="food-name" name="foodName" placeholder="e.g. Pasta" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="food-category">Category:</label></td>
+                                    <td>
+                                        <select id="food-category" name="foodCategory">
+                                            <option value="Fast Food">Fast Food</option>
+                                            <option value="Snacks">Snacks</option>
+                                            <option value="Beverage">Beverage</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="food-price">Price (৳):</label></td>
+                                    <td><input type="number" id="food-price" name="foodPrice" placeholder="e.g. 100" min="0" required></td>
+                                </tr>
+                                <tr>
+                                    <td>Availability:</td>
+                                    <td>
+                                        <input type="radio" id="avail-yes" name="foodAvailability" value="available" checked>
+                                        <label for="avail-yes">Available</label>
+                                        <input type="radio" id="avail-no" name="foodAvailability" value="unavailable">
+                                        <label for="avail-no">Unavailable</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="food-description">Description:</label></td>
+                                    <td><textarea id="food-description" name="foodDescription" rows="4" cols="30" placeholder="Short description"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="food-image">Food Image:</label></td>
+                                    <td><input type="file" id="food-image" name="foodImage"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" value="Add Item">
+                                        <input type="reset" value="Reset">
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright &copy; 2026 CampusBite. All Rights Reserved.</p>
+        <p>University Canteen Management System</p>
+    </footer>
+
+</body>
+
+</html>

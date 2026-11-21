@@ -1,0 +1,278 @@
+:root {
+    --main-color: #C76B3A;
+    /* Burnt Terracotta */
+    --accent-color: #E89A54;
+    /* Warm Orange */
+    --heading-color: #A65E3F;
+    /* Muted Copper */
+    --background-color: #F5E8DC;
+    /* Soft Cream */
+    --text-color: #3D302B;
+    /* Dark Brown */
+    --muted-color: #8A7469;
+    /* Muted Text */
+    --white: #FFFFFF;
+}
+
+
+/* Element Selectors */
+
+body {
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid var(--main-color);
+    border-radius: 8px;
+    background-color: var(--white);
+}
+
+nav {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid var(--accent-color);
+    border-radius: 6px;
+    background-color: var(--background-color);
+}
+
+main {
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--white);
+}
+
+footer {
+    margin: 15px 10px;
+    padding: 12px;
+    border: 1px solid var(--heading-color);
+    border-radius: 6px;
+    background-color: var(--heading-color);
+    color: var(--white);
+}
+
+h1 {
+    margin: 10px 0;
+    padding: 5px;
+    color: var(--heading-color);
+}
+
+h2 {
+    margin: 15px 0;
+    padding: 5px;
+    color: var(--heading-color);
+}
+
+h3 {
+    margin: 10px 0;
+    padding: 5px;
+    color: var(--main-color);
+}
+
+p {
+    margin: 8px 0;
+    padding: 3px;
+    color: var(--text-color);
+}
+
+figure {
+    margin: 10px;
+    padding: 5px;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    padding: 3px;
+    border: 1px solid var(--accent-color);
+}
+
+form {
+    margin: 10px 0;
+    padding: 5px;
+}
+
+fieldset {
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid var(--main-color);
+    border-radius: 6px;
+}
+
+legend {
+    margin: 5px;
+    padding: 3px;
+    color: var(--heading-color);
+}
+
+label {
+    margin: 5px 0;
+    padding: 3px;
+    color: var(--text-color);
+}
+
+table {
+    width: 100%;
+    margin: 15px 0;
+    border: 1px solid var(--main-color);
+    background-color: var(--white);
+}
+
+caption {
+    margin: 5px;
+    padding: 8px;
+    color: var(--heading-color);
+}
+
+th {
+    padding: 8px;
+    border: 1px solid var(--accent-color);
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+td {
+    padding: 8px;
+    border: 1px solid var(--accent-color);
+    color: var(--text-color);
+}
+
+hr {
+    margin: 15px 0;
+    border: 1px solid var(--accent-color);
+}
+
+
+/* Class Selectors */
+
+.brand {
+    margin: 5px;
+    padding: 5px;
+    color: var(--heading-color);
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px 0 0;
+    padding: 0;
+    border: 0;
+}
+
+.nav-link {
+    margin: 5px;
+    padding: 5px 10px;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    color: var(--main-color);
+    background-color: var(--white);
+}
+
+.card {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    background-color: var(--white);
+}
+
+.field {
+    width: 95%;
+    margin: 5px 0;
+    padding: 8px;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    background-color: var(--white);
+    color: var(--text-color);
+}
+
+.label-cell {
+    width: 35%;
+    padding: 8px;
+    color: var(--text-color);
+}
+
+.input-cell {
+    padding: 8px;
+}
+
+.btn {
+    margin: 5px;
+    padding: 10px 20px;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+.btn-reset {
+    margin: 5px;
+    padding: 10px 20px;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.menu-photo {
+    width: 80px;
+    height: 60px;
+    margin: 0;
+}
+
+.note {
+    margin: 8px 0;
+    padding: 5px;
+    color: var(--muted-color);
+}
+
+.center {
+    margin: 5px auto;
+    padding: 5px;
+}
+
+
+/* ID Selectors */
+
+#loginBox {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    background-color: var(--white);
+}
+
+#registerBox {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    background-color: var(--white);
+}
+
+#logoutBox {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    background-color: var(--white);
+}
+
+#menuBox {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    background-color: var(--white);
+}

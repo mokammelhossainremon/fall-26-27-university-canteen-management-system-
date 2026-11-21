@@ -27,8 +27,10 @@ function validateLogin() {
   for (const user of users) {
     let sameName = user.username.toLowerCase() === username.toLowerCase();
     let sameEmail = user.email.toLowerCase() === username.toLowerCase();
+
     if (sameName || sameEmail) {
       foundUser = user;
+      break;
     }
   }
 
@@ -43,25 +45,30 @@ function validateLogin() {
   }
 
   let form = document.getElementById("loginForm");
+
   switch (foundUser.role) {
     case "Admin":
       form.action = "admin.html";
       break;
-        case "Manager":
-    form.action = "manager.html";
-    break;
-  case "Staff":
-    form.action = "staff.html";
-    break;
-  case "Student":
-    form.action = "student.html";
-    break;
- default:
-    showMessage(
-      "loginMessage",
-      "Hello " + foundUser.name + ", no dashboard is available for your role.",
-      "info"
-    );
+
+    case "Manager":
+      form.action = "manager.html";
+      break;
+
+    case "Staff":
+      form.action = "staff.html";
+      break;
+
+    case "Student":
+      form.action = "student.html";
+      break;
+
+    default:
+      showMessage(
+        "loginMessage",
+        "Hello " + foundUser.name + ", no dashboard is available for your role.",
+        "info"
+      );
       return false;
   }
 
@@ -76,6 +83,7 @@ function clearLoginErrors() {
 
 function togglePassword() {
   let passwordInput = document.getElementById("password");
+
   if (document.getElementById("showPassword").checked) {
     passwordInput.type = "text";
   } else {

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login to the CampusBite Canteen Management System">
+  <title>Login | CampusBite</title>
+  <link rel="stylesheet" href="css/stylea.css">
+</head>
+<body>
+
+  <header class="header">
+     <div>
+          <img src="images/images/logo.png" alt="CampusBite Logo" width="50" height="50">
+    <a href="admin.html" class="logo">Uni<span>Canteen</span></a>
+    </div>
+    <div class="user-info">
+      <a href="login.html" class="btn btn-small btn-light">Login</a>
+      <a href="register.html" class="btn btn-small">Register</a>
+            <a href="menul.html" class="btn btn-small">menu</a>
+
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="auth-box">
+
+      <div class="card">
+        <h2 class="page-title">Welcome back</h2>
+        <p class="page-subtitle">One login for everyone: admins, managers, staff and students.
+          We will open the right dashboard for your account.</p>
+
+        <div id="loginMessage" class="message"></div>
+
+    
+        <form id="loginForm" action="login.html" method="get" onsubmit="return validateLogin()">
+          <fieldset>
+            <legend>Your account</legend>
+            <table class="form-table">
+              <tr>
+                <td><label for="username">Username or Email:</label></td>
+                <td>
+                  <input type="text" id="username" name="username" placeholder="e.g. admin or rahim@student.edu">
+                  <span class="error" id="usernameError"></span>
+                </td>
+              </tr>
+              <tr>
+                <td><label for="password">Password:</label></td>
+                <td>
+                  <input type="password" id="password" placeholder="Your password">
+                  <span class="error" id="passwordError"></span>
+                  <input type="checkbox" id="showPassword" onchange="togglePassword()">
+                  <label for="showPassword" class="option-label">Show password</label>
+                </td>
+              </tr>
+            </table>
+          </fieldset>
+
+          <input type="submit" class="btn btn-block" value="Login">
+        </form>
+
+        <p class="auth-switch">Don't have an account? <a href="register.html">Register here</a></p>
+      </div>
+
+      <div class="card">
+        <h3>Demo accounts</h3>
+        <p class="hint">Click "Use" to fill the form, then press Login.</p>
+        <table class="demo-accounts">
+          <tr>
+            <td><span class="badge admin">Admin</span></td>
+            <td>admin / admin1234</td>
+            <td><button type="button" class="btn btn-small" onclick="fillDemo('admin', 'admin1234')">Use</button></td>
+          </tr>
+          <tr>
+            <td><span class="badge manager">Manager</span></td>
+            <td>manager / manager123</td>
+            <td><button type="button" class="btn btn-small" onclick="fillDemo('manager', 'manager123')">Use</button></td>
+          </tr>
+          <tr>
+            <td><span class="badge staff">Staff</span></td>
+            <td>staff / staff1234</td>
+            <td><button type="button" class="btn btn-small" onclick="fillDemo('staff', 'staff1234')">Use</button></td>
+          </tr>
+          <tr>
+            <td><span class="badge student">Student</span></td>
+            <td>student / student123</td>
+            <td><button type="button" class="btn btn-small" onclick="fillDemo('student', 'student123')">Use</button></td>
+          </tr>
+          <tr>
+            <td><span class="badge red">Blocked</span></td>
+            <td>tanvir / tanvir123</td>
+            <td><button type="button" class="btn btn-small btn-secondary" onclick="fillDemo('tanvir', 'tanvir123')">Use</button></td>
+          </tr>
+        </table>
+        <p class="hint">The last one is a blocked student, so login is refused.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    &copy; 2026 UniCANTEEN &middot; University Canteen Management System
+  </footer>
+
+  <script src="js/dataa.js"></script>
+  <script src="js/commona.js"></script>
+  <script src="js/logina.js"></script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create a UniCANTEEN account">
+  <title>Register | UniCANTEEN</title>
+  <link rel="stylesheet" href="css/stylea.css">
+</head>
+<body>
+
+  <header class="header">
+    <div>
+          <img src="images/images/logo.png" alt="CampusBite Logo" width="50" height="50">
+    <a href="admin.html" class="logo">Uni<span>Canteen</span></a>
+    </div>
+    <div class="user-info">
+      <a href="login.html" class="btn btn-small btn-light">Login</a>
+      <a href="register.html" class="btn btn-small">Register</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="auth-box wide">
+      <div class="card">
+        <h2 class="page-title">Create your account</h2>
+        <p class="page-subtitle">One registration page for students, managers and staff.
+          Choose who you are and the form will ask only for what we need. Fields marked * are required.</p>
+
+        <div id="registerMessage" class="message"></div>
+
+        <form id="registerForm" action="login.html" method="get" onsubmit="return validateRegister()">
+
+        
+          <fieldset>
+            <legend>Step 1 &middot; I want to register as *</legend>
+            <div class="type-grid">
+
+              <label class="type-option" id="typeCardStudent" for="typeStudent">
+               <div>
+                <input type="radio" id="typeStudent" name="userType" value="Student" onchange="showTypeFields()">
+                <strong>Student</strong>
+                <span class="hint">Order food, check the menu and track your orders.</span>
+              </div>
+              </label>
+              <label class="type-option" id="typeCardManager" for="typeManager">
+               <div>
+                <input type="radio" id="typeManager" name="userType" value="Manager" onchange="showTypeFields()">
+                
+                <strong>Manager</strong>
+                <span class="hint">Run the canteen menu and orders. Needs admin approval.</span>
+              </div>
+              </label>
+              <label class="type-option" id="typeCardStaff" for="typeStaff">
+               <div> <input type="radio" id="typeStaff" name="userType" value="Staff" onchange="showTypeFields()">
+                <strong>Staff</strong>
+                <span class="hint">Prepare and serve orders. Needs admin approval.</span>
+             </div>
+              </label>
+            </div>
+            <span class="error" id="userTypeError"></span>
+          </fieldset>
+
+          <div id="formBody" class="form-body">
+
+            <fieldset>
+              <legend>Step 2 &middot; Personal information</legend>
+              <table class="form-table">
+                <tr>
+                  <td><label for="fullName">Full Name: *</label></td>
+                  <td>
+                    <input type="text" id="fullName" name="fullName" placeholder="Your full name">
+                    <span class="error" id="fullNameError"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="email">Email: *</label></td>
+                  <td>
+                    <input type="email" id="email" name="email" placeholder="you@example.com">
+                    <span class="error" id="emailError"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="phone">Phone: *</label></td>
+                  <td>
+                    <input type="tel" id="phone" name="phone" placeholder="11 digits, e.g. 01712345678">
+                    <span class="error" id="phoneError"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Gender: *</td>
+                  <td>
+                    <input type="radio" id="genderMale" name="gender" value="Male">
+                    <label for="genderMale" class="option-label">Male</label>
+                    <input type="radio" id="genderFemale" name="gender" value="Female">
+                    <label for="genderFemale" class="option-label">Female</label>
+                    <input type="radio" id="genderOther" name="gender" value="Other">
+                    <label for="genderOther" class="option-label">Prefer not to say</label>
+                    <span class="error" id="genderError"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="dob">Date of Birth: *</label></td>
+                  <td>
+                    <input type="date" id="dob" name="dob">
+                    <span class="error" id="dobError"></span>
+                  </td>
+                </tr>
+              </table>
+            </fieldset>
+
+            <fieldset id="studentFields" class="type-fields">
+              <legend>Step 3 &middot; Student details</legend>
+              <table class="form-table">
+                <tr>
+                  <td><label for="studentId">Student ID: *</label></td>
+                  <td>
+                    <input type="text" id="studentId" name="studentId" placeholder="e.g. 23-51234-1">
+                    <span class="error" id="studentIdError"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="department">Department: *</label></td>
+                  <td>
+                    <select id="department" name="department">
+                      <option value="">-- Select Department --</option>
+                      <option value="CSE">CSE</option>
+                      <option value="EEE">EEE</option>
+                      <option value="BBA">BBA</option>
+                      <option value="English">English</option>
+                      <option value="Architecture">Architecture</option>
+                    </select>
+                    <span class="error" id="departmentError"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="semester">Semester: *</label></td>
+                  <td>
+                    <select id="semester" name="semester">
+                      <option value="">-- Select Semester --</option>
+                      <option value="1st">1st</option>
+                      <option value="2nd">2nd</option>
+                      <option value="3rd">3rd</option>
+                      <option value="4th">4th</option>
+                      <option value="5th">5th</option>
+                      <option value="6th">6th</option>
+                      <option value="7th">7th</option>
+                      <option value="8th">8th</option>
+                    </select>
+                    <span class="error" id="semesterError"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Favourite Food:</td>
+                  <td>
+                    <input type="checkbox" id="favMeals" name="favourite" value="Meals">
+                    <label for="favMeals" class="option-label">Meals</label>
+                    <input type="checkbox" id="favSnacks" name="favourite" value="Snacks">
+                    <label for="favSnacks" class="option-label">Snacks</label>
+                    <input type="checkbox" id="favDrinks" name="favourite" value="Drinks">
+                    <label for="favDrinks" class="option-label">Drinks</label>
+                    <input type="checkbox" id="favDesserts" name="favourite" value="Desserts">
+                    <label for="favDesserts" class="option-label">Desserts</label>
+                  </td>
+                </tr>
+              </table>
+            </fieldset>
+
+            <fieldset id="managerFields" class="type-fields">
+              <legend>Step 3 &middot; Manager details</legend>
+              <table class="form-table">
+                <tr>
+                  <td><label for="managerEmployeeId">Employee ID: *</label></td>
+                  <td>
+                    <input type="text" id="managerEmployeeId" name="managerEmployeeId" placeholder="e.g. MGR-1234">
+                    <span class="error" id="managerEmployeeIdError"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="managerQualification">Qualification: *</label></td>
+                  <td>
+                    <select id="managerQualification" name="managerQualification">
+                      <option value="">-- Select Qualification --</option>
+                      <option value="Diploma">Diploma in Hospitality</option>
+                      <option value="Bachelor">Bachelor's Degree</option>
+                      <option value="Master">Master's Degree</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <span class="error" id="managerQualificationError"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="managerExperience">Experience (years): *</label></td>
+                  <td>
+                    <input type="number" id="managerExperience" name="managerExperience" min="0" max="40" placeholder="0 - 40">
+                    <span class="error" id="managerExperienceError"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Preferred Shift: *</td>
+                  <td>
+                    <input type="radio" id="managerShiftMorning" name="managerShift" value="Morning">
+                    <label for="managerShiftMorning" class="option-label">Morning (7 AM - 2 PM)</label>
+                    <input type="radio" id="managerShiftEvening" name="managerShift" value="Evening">
+                    <label for="managerShiftEvening" class="option-label">Evening (2 PM - 9 PM)</label>
+                    <span class="error" id="managerShiftError"></span>
+                  </td>
+                </tr>
+              </table>
+              <p class="hint">Manager accounts are checked by an admin. You can log in after approval.</p>
+            </fieldset>
+
+            <fieldset id="staffFields" class="type-fields">
+              <legend>Step 3 &middot; Staff details</legend>
+              <table class="form-table">
+                <tr>
+                  <td><label for="staffEmployeeId">Employee ID: *</label></td>
+                  <td>
+                    <input type="text" id="staffEmployeeId" name="staffEmployeeId" placeholder="e.g. STF-1234">
+                    <span class="error" id="staffEmployeeIdError"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="staffPosition">Position: *</label></td>
+                  <td>
+                    <select id="staffPosition" name="staffPosition">
+                      <option value="">-- Select Position --</option>
+                      <option value="Cook">Cook</option>
+                      <option value="Cashier">Cashier</option>
+                      <option value="Server">Server</option>
+                      <option value="Cleaner">Cleaner</option>
+                    </select>
+                    <span class="error" id="staffPositionError"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Preferred Shift: *</td>
+                  <td>
+                    <input type="radio" id="staffShiftMorning" name="staffShift" value="Morning">
+                    <label for="staffShiftMorning" class="option-label">Morning (7 AM - 2 PM)</label>
+                    <input type="radio" id="staffShiftEvening" name="staffShift" value="Evening">
+                    <label for="staffShiftEvening" class="option-label">Evening (2 PM - 9 PM)</label>
+                    <span class="error" id="staffShiftError"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="staffAddress">Address: *</label></td>
+                  <td>
+                    <textarea id="staffAddress" name="staffAddress" rows="3" cols="30" placeholder="House, road, area, city"></textarea>
+                    <span class="error" id="staffAddressError"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>I can help with:</td>
+                  <td>
+                    <input type="checkbox" id="dutyCooking" name="duty" value="Cooking">
+                    <label for="dutyCooking" class="option-label">Cooking</label>
+                    <input type="checkbox" id="dutyServing" name="duty" value="Serving">
+                    <label for="dutyServing" class="option-label">Serving</label>
+                    <input type="checkbox" id="dutyBilling" name="duty" value="Billing">
+                    <label for="dutyBilling" class="option-label">Billing</label>
+                  </td>
+                </tr>
+              </table>
+              <p class="hint">Staff accounts are checked by an admin. You can log in after approval.</p>
+            </fieldset>
+
+            <fieldset>
+              <legend>Step 4 &middot; Login details</legend>
+              <table class="form-table">
+                <tr>
+                  <td><label for="newUsername">Username: *</label></td>
+                  <td>
+                    <input type="text" id="newUsername" name="newUsername" placeholder="At least 4 characters, no spaces">
+                    <span class="error" id="newUsernameError"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="newPassword">Password: *</label></td>
+                  <td>
+                    <input type="password" id="newPassword" placeholder="At least 8 characters with a digit" onkeyup="showPasswordStrength()">
+                    <span class="hint" id="strengthText"></span>
+                    <span class="error" id="newPasswordError"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="confirmPassword">Confirm Password: *</label></td>
+                  <td>
+                    <input type="password" id="confirmPassword" placeholder="Type the password again">
+                    <span class="error" id="confirmPasswordError"></span>
+                  </td>
+                </tr>
+              </table>
+            </fieldset>
+
+            <p>
+              <input type="checkbox" id="terms" name="terms" onchange="toggleRegisterButton()">
+              <label for="terms" class="option-label">I agree to the canteen rules and terms *</label>
+            </p>
+
+            <div class="form-buttons">
+              <input type="submit" id="registerButton" class="btn" value="Create Account" disabled>
+            </div>
+          </div>
+        </form>
+
+        <p class="auth-switch">Already have an account? <a href="login.html">Login here</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    &copy; 2026 UniCANTEEN &middot; University Canteen Management System
+  </footer>
+
+  <script src="js/dataa.js"></script>
+  <script src="js/commona.js"></script>
+  <script src="js/registera.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View and search your previous canteen orders">
+    <meta name="author" content="rimon">
+    <title>Order History | CampusBite</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+
+<body id="top">
+
+    <header>
+        <span class="brand">CampusBite</span>
+        <em>University Canteen Management System</em>
+    </header>
+
+    <nav>
+
+        <a class="nav-link" href="viewMenu.html" title="See the food menu">View Menu</a> |
+        <a class="nav-link" href="searchFood.html" title="Search food">Search Food</a> |
+        <a class="nav-link" href="addToCart.html" title="Add food to cart">Add To Cart</a> |
+        <a class="nav-link" href="placeOrder.html" title="Place your order">Place Order</a> |
+        <a class="nav-link" href="orderHistory.html" title="Your previous orders">Order History</a> |
+        <a class="nav-link" href="login.html" title="Logout">Logout</a>
+    </nav>
+
+    <main>
+        <section id="menuBox">
+            <figure>
+                <img src="images/order-history.jpeg" alt="Order History" width="80" height="80" title="History">
+            </figure>
+            <h2>Order History</h2>
+
+            <form action="#" method="post" onsubmit="return searchOrder()">
+                <fieldset>
+                    <legend>Search Order</legend>
+                    <label for="orderid">Order ID:</label><br>
+                    <input type="text" id="orderid" name="orderid" class="field" placeholder="ORD-1001"><br><br>
+
+                    <label for="orderdate">Order Date:</label><br>
+                    <input type="date" id="orderdate" name="orderdate" class="field"><br><br>
+
+                    <label for="foodname">Food Name:</label><br>
+                    <input type="text" id="foodname" name="foodname" class="field"><br><br>
+
+                    <label for="status">Order Status:</label><br>
+                    <select id="status" name="status" class="field">
+                        <option value="" selected>Select Status</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Preparing">Preparing</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Cancelled">Cancelled</option>
+                    </select><br><br>
+
+                    <input type="submit" value="Search Order" class="btn">
+                    <input type="reset" value="Clear" class="btn btn-reset">
+                </fieldset>
+            </form>
+
+
+            <table border="1" cellpadding="8" cellspacing="0" width="100%">
+
+                <caption>Your Previous Orders</caption>
+
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Date</th>
+                        <th>Food Name</th>
+                        <th>Quantity</th>
+                        <th>Total (Tk)</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="orderBody">
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="4">Total Amount</td>
+                        <td colspan="2" id="totalAmount">740</td>
+                    </tr>
+                </tfoot>
+
+            </table>
+
+            <div id="orderResults"></div>
+
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 2026 CampusBite. All Rights Reserved.</p>
+        <p>University Canteen Management System</p>
+        <p><a class="nav-link" href="#top">Back to top</a></p>
+    </footer>
+
+    <script src="JS/orderHistory.js"></script>
+
+</body>
+
+</html>

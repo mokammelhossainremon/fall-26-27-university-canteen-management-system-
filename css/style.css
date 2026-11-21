@@ -1062,3 +1062,16 @@ input[type="checkbox"] {
   display: block;
   margin-bottom: 4px;
 }
+
+/* Red border on an input that failed JavaScript validation */
+.invalid {
+  border-color: #C62828 !important;
+  outline-color: #C62828;
+}
+
+/* Green message shown after the contact form is sent */
+.success {
+  color: #2E7D32;
+  font-weight: bold;
+  margin-top: 12px;
+}

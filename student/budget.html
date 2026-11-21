@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Budget | UniCanteen</title>
+    <link rel="stylesheet" href="css/student.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <a href="student.html" class="brand"><span class="brand-mark">U</span><span>UniCanteen<small>STUDENT PORTAL</small></span></a>
+        <p class="menu-title">STUDENT MENU</p>
+        <nav class="navigation"><a href="student.html" class="nav-link ">Dashboard</a>
+<a href="my-order.html" class="nav-link ">My Orders</a>
+<a href="food-menu.html" class="nav-link ">Food Menu</a>
+<a href="favourite-foods.html" class="nav-link ">Favourite Foods</a>
+<a href="budget.html" class="nav-link active">My Budget</a>
+<a href="feedback.html" class="nav-link ">Rating & Feedback</a></nav>
+        <div class="sidebar-bottom"><a href="../login.html" class="nav-link logout">Logout</a></div>
+    </aside>
+    <main class="main-content">
+        <header class="topbar">
+            <div><p class="eyebrow">BUDGET PLANNER</p><h2>My Budget</h2></div>
+            <div class="profile"><div class="profile-avatar">S</div><div><h4>Student</h4><p>Student Account</p></div></div>
+        </header>
+        
+<section class="page-intro"><div><span class="welcome-tag">PERSONAL FINANCE</span><h1>Food Budget Tracker</h1><p>Set a daily or monthly budget and monitor your food expenses.</p></div></section>
+<section class="section">
+    <div class="section-heading"><div><h2>Set Your Budget</h2><p>Choose a period and set your spending limit.</p></div></div>
+    <form id="budgetForm" class="form-grid">
+        <div class="form-group"><label for="budgetType">Budget Period</label><select id="budgetType"><option value="daily">Daily</option><option value="monthly">Monthly</option></select></div>
+        <div class="form-group"><label for="budgetAmount">Budget Amount (৳)</label><input type="number" id="budgetAmount" min="1" max="1000000" placeholder="Enter amount" required></div>
+        <div class="form-actions"><button type="submit" class="btn btn-primary">Save Budget</button></div>
+    </form>
+</section>
+<section class="section">
+    <div class="section-heading"><div><h2>Budget Overview</h2><p id="budgetPeriodLabel">Daily budget summary</p></div></div>
+    <div class="stats-grid budget-stats">
+        <article class="stat-card"><span class="stat-icon purple">৳</span><div><p>Budget Limit</p><h2 id="totalBudget">৳0</h2></div></article>
+        <article class="stat-card"><span class="stat-icon amber">↗</span><div><p>Total Spent</p><h2 id="totalSpent">৳0</h2></div></article>
+        <article class="stat-card"><span class="stat-icon green">✓</span><div><p>Remaining</p><h2 id="remainingBudget">৳0</h2></div></article>
+    </div>
+    <div class="progress-panel"><div class="progress-heading"><h3>Budget Usage</h3><strong id="budgetPercentage">0%</strong></div><div class="progress-track"><div class="progress-fill" id="budgetProgress"></div></div><p id="budgetMessage">Set a budget to start tracking your expenses.</p></div>
+</section>
+<section class="section">
+    <div class="section-heading"><div><h2>Expense Management</h2><p>Add, edit, delete and search your expenses.</p></div></div>
+    <form id="expenseForm" class="form-grid compact-form">
+        <input type="hidden" id="expenseId">
+        <div class="form-group"><label for="expenseDescription">Expense Description</label><input type="text" id="expenseDescription" maxlength="60" placeholder="e.g. Chicken Burger" required></div>
+        <div class="form-group"><label for="expenseAmount">Amount (৳)</label><input type="number" id="expenseAmount" min="1" max="100000" placeholder="Enter amount" required></div>
+        <div class="form-actions"><button type="submit" class="btn btn-primary" id="expenseSubmit">Add Expense</button><button type="button" class="btn btn-light" id="cancelExpense" hidden>Cancel</button></div>
+    </form>
+    <div class="section-heading section-heading-wrap sub-heading"><h3>Expense History</h3><input class="search-input" type="search" id="expenseSearch" placeholder="Search expenses"></div>
+    <div class="table-wrap"><table><thead><tr><th>Expense ID</th><th>Description</th><th>Amount</th><th>Date</th><th>Actions</th></tr></thead><tbody id="expenseTableBody"></tbody></table></div><p class="empty-message" id="expenseEmpty" hidden>No expenses found.</p>
+</section>
+
+        <footer>© 2026 University Canteen Management System</footer>
+    </main>
+    <script src="js/data.js"></script>
+    <script src="js/budget.js"></script>
+</body>
+</html>

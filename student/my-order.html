@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders | UniCanteen</title>
+    <link rel="stylesheet" href="css/student.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <a href="student.html" class="brand"><span class="brand-mark">U</span><span>UniCanteen<small>STUDENT PORTAL</small></span></a>
+        <p class="menu-title">STUDENT MENU</p>
+        <nav class="navigation"><a href="student.html" class="nav-link ">Dashboard</a>
+<a href="my-order.html" class="nav-link active">My Orders</a>
+<a href="food-menu.html" class="nav-link ">Food Menu</a>
+<a href="favourite-foods.html" class="nav-link ">Favourite Foods</a>
+<a href="budget.html" class="nav-link ">My Budget</a>
+<a href="feedback.html" class="nav-link ">Rating & Feedback</a></nav>
+        <div class="sidebar-bottom"><a href="../login.html" class="nav-link logout">Logout</a></div>
+    </aside>
+    <main class="main-content">
+        <header class="topbar">
+            <div><p class="eyebrow">ORDER CENTRE</p><h2>My Orders</h2></div>
+            <div class="profile"><div class="profile-avatar">S</div><div><h4>Student</h4><p>Student Account</p></div></div>
+        </header>
+        
+<section class="page-intro"><div><span class="welcome-tag">ORDER MANAGEMENT</span><h1>My Food Orders</h1><p>Create, view, update, delete and search your food orders.</p></div></section>
+<section class="section">
+    <div class="section-heading"><div><h2 id="orderFormTitle">Place New Order</h2><p>Choose a food item and enter the quantity.</p></div></div>
+    <form id="orderForm" class="form-grid">
+        <input type="hidden" id="orderId">
+        <div class="form-group"><label for="foodName">Food Name</label><select id="foodName" required><option value="">Select food</option></select></div>
+        <div class="form-group"><label for="quantity">Quantity</label><input type="number" id="quantity" min="1" max="20" value="1" required></div>
+        <div class="form-group full-width"><label for="orderNotes">Special Instructions</label><textarea id="orderNotes" rows="3" maxlength="150" placeholder="Example: less spicy, no onion"></textarea></div>
+        <div class="form-actions"><button type="submit" class="btn btn-primary" id="orderSubmit">Place Order</button><button type="button" class="btn btn-light" id="cancelOrderEdit" hidden>Cancel</button></div>
+    </form>
+</section>
+<section class="section">
+    <div class="section-heading section-heading-wrap"><div><h2>All My Orders</h2><p>Search or manage your previous orders.</p></div><input class="search-input" type="search" id="orderSearch" placeholder="Search order ID or food"></div>
+    <div class="table-wrap"><table><thead><tr><th>Order ID</th><th>Food</th><th>Qty</th><th>Total</th><th>Date</th><th>Status</th><th>Actions</th></tr></thead><tbody id="ordersTableBody"></tbody></table></div><p class="empty-message" id="ordersEmpty" hidden>No matching orders found.</p>
+</section>
+
+        <footer>© 2026 University Canteen Management System</footer>
+    </main>
+    <script src="js/data.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>

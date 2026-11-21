@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu | UniCanteen</title>
+    <link rel="stylesheet" href="css/student.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <a href="student.html" class="brand"><span class="brand-mark">U</span><span>UniCanteen<small>STUDENT PORTAL</small></span></a>
+        <p class="menu-title">STUDENT MENU</p>
+        <nav class="navigation"><a href="student.html" class="nav-link ">Dashboard</a>
+<a href="my-order.html" class="nav-link ">My Orders</a>
+<a href="food-menu.html" class="nav-link active">Food Menu</a>
+<a href="favourite-foods.html" class="nav-link ">Favourite Foods</a>
+<a href="budget.html" class="nav-link ">My Budget</a>
+<a href="feedback.html" class="nav-link ">Rating & Feedback</a></nav>
+        <div class="sidebar-bottom"><a href="../login.html" class="nav-link logout">Logout</a></div>
+    </aside>
+    <main class="main-content">
+        <header class="topbar">
+            <div><p class="eyebrow">FOOD CATALOGUE</p><h2>Food Menu</h2></div>
+            <div class="profile"><div class="profile-avatar">S</div><div><h4>Student</h4><p>Student Account</p></div></div>
+        </header>
+        
+<section class="page-intro"><div><span class="welcome-tag">CANTEEN CATALOGUE</span><h1>Explore Food Menu</h1><p>Browse food items, check prices and see current availability.</p></div></section>
+<section class="section">
+    <div class="section-heading section-heading-wrap"><div><h2>Food Items</h2><p>Select a category or search by food name.</p></div><input class="search-input" type="search" id="foodSearch" placeholder="Search food menu"></div>
+    <div class="filter-list"><button class="filter-btn active" data-category="All">All</button><button class="filter-btn" data-category="Breakfast">Breakfast</button><button class="filter-btn" data-category="Lunch">Lunch</button><button class="filter-btn" data-category="Snacks">Snacks</button><button class="filter-btn" data-category="Drinks">Drinks</button></div>
+    <div class="food-grid" id="foodGrid"></div><p class="empty-message" id="noFoodMessage" hidden>No food items found.</p>
+</section>
+
+        <footer>© 2026 University Canteen Management System</footer>
+    </main>
+    <script src="js/data.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html>

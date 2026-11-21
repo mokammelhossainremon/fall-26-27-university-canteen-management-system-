@@ -44,36 +44,34 @@ function validateLogin() {
     return false;
   }
 
-  let form = document.getElementById("loginForm");
+  const dashboards = {
+    admin: "admin.html",
+    manager: "manager.html",
+    staff: "staff.html",
+    student: "student/student.html"
+  };
 
-  switch (foundUser.role) {
-    case "Admin":
-      form.action = "admin.html";
-      break;
+  const role = String(foundUser.role || "").trim().toLowerCase();
+  const destination = dashboards[role];
 
-    case "Manager":
-      form.action = "manager.html";
-      break;
-
-    case "Staff":
-      form.action = "staff.html";
-      break;
-
-    case "Student":
-      form.action = "student.html";
-      break;
-
-    default:
-      showMessage(
-        "loginMessage",
-        "Hello " + foundUser.name + ", no dashboard is available for your role.",
-        "info"
-      );
-      return false;
+  if (!destination) {
+    showMessage(
+      "loginMessage",
+      "Hello " + foundUser.name + ", no dashboard is available for your role.",
+      "info"
+    );
+    return false;
   }
 
-  console.log("Login OK: " + foundUser.name + " (" + foundUser.role + ") -> " + form.action);
-  return true;
+  sessionStorage.setItem("canteenCurrentUser", JSON.stringify({
+    id: foundUser.id,
+    name: foundUser.name.trim(),
+    username: foundUser.username,
+    role: foundUser.role
+  }));
+
+  window.location.href = destination;
+  return false;
 }
 
 function clearLoginErrors() {

@@ -1,105 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Place your canteen food order">
-    <meta name="author" content="rimon">
-    <title>Place Order | CampusBite</title>
-    <link rel="stylesheet" href="CSS/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Place your canteen food order">
+<meta name="author" content="rimon">
+<title>Place Order | CampusBite</title>
+<link rel="stylesheet" href="CSS/style.css">
 </head>
-
 <body id="top">
+<header>
+<span class="brand">CampusBite</span>
+<em>University Canteen Management System</em>
+</header>
+<nav>
+<a class="nav-link" href="viewMenu.html" title="See the food menu">View Menu</a> |
+<a class="nav-link" href="searchFood.html" title="Search food">Search Food</a> |
+<a class="nav-link" href="addToCart.html" title="Add food to cart">Add To Cart</a> |
+<a class="nav-link" href="placeOrder.html" title="Place your order">Place Order</a> |
+<a class="nav-link" href="orderHistory.html" title="Your previous orders">Order History</a> |
+<a class="nav-link" href="logout.html" title="Logout">Logout</a>
+</nav>
+<main>
 
-    <header>
-        <span class="brand">CampusBite</span>
-        <em>University Canteen Management System</em>
-    </header>
+<section class="card">
+<h2>Place Your Order</h2>
+<form action="#" method="post" onsubmit="return placeOrder()" onreset="clearErrors()" novalidate>
+<input type="hidden" name="orderSource" value="web">
+<fieldset>
+<legend>Order Details</legend>
+<label for="customername">Customer Name:</label><br>
+<input type="text" id="customername" name="customername" class="field" maxlength="50" placeholder="Your name" autofocus>
+<span class="error" id="nameError"></span><br><br>
+<label for="foodname">Food Name:</label><br>
+<input type="text" id="foodname" name="foodname" class="field" list="foodlist" placeholder="Type food name" oninput="calcTotal()">
+<datalist id="foodlist">
+<option value="Chicken Burger">
+<option value="Pizza">
+<option value="French Fries">
+<option value="Samosa">
+<option value="Tea">
+<option value="Fried Rice">
+<option value="Khichuri">
+</datalist>
+<span class="error" id="foodError"></span><br><br>
+<label for="quantity">Quantity:</label><br>
+<input type="number" id="quantity" name="quantity" class="field" min="1" max="20" value="1" oninput="calcTotal()">
+<span class="error" id="qtyError"></span><br><br>
+<label for="totalprice">Total Price (Tk):</label><br>
+<input type="number" id="totalprice" name="totalprice" class="field" min="0">
+<span class="error" id="priceError"></span><br><br>
+Payment Method:<br>
+<input type="radio" id="cash" name="payment" value="Cash" checked>
+<label for="cash">Cash</label>
+<input type="radio" id="card" name="payment" value="Card">
+<label for="card">Card</label>
+<input type="radio" id="mobile" name="payment" value="Mobile Banking">
+<label for="mobile">Mobile Banking</label><br><br>
+<label for="delivery">Collection Method:</label><br>
+<select id="delivery" name="delivery" class="field">
+<option value="" disabled selected>Select Collection Method</option>
+<option value="Counter Pickup">Counter Pickup</option>
+<option value="Table Service">Table Service</option>
+</select>
+<span class="error" id="methodError"></span><br><br>
+<label for="pickupdate">Order Date:</label><br>
+<input type="date" id="pickupdate" name="pickupdate" class="field">
+<span class="error" id="dateError"></span><br><br>
+<label for="instructions">Additional Instructions:</label><br>
+<textarea id="instructions" name="instructions" class="field" rows="4" cols="30" maxlength="200"></textarea><br><br>
+<input type="checkbox" id="confirm" name="confirm">
+<label for="confirm">I confirm my order</label>
+<span class="error" id="confirmError"></span><br><br>
+<button type="submit" class="btn">Confirm Order</button>
+<button type="reset" class="btn btn-reset">Clear</button>
+</fieldset>
+</form>
+<p class="success" id="orderMessage"></p>
+</section>
 
-    <nav>
-
-        <a class="nav-link" href="viewMenu.html" title="See the food menu">View Menu</a> |
-        <a class="nav-link" href="searchFood.html" title="Search food">Search Food</a> |
-        <a class="nav-link" href="addToCart.html" title="Add food to cart">Add To Cart</a> |
-        <a class="nav-link" href="placeOrder.html" title="Place your order">Place Order</a> |
-        <a class="nav-link" href="orderHistory.html" title="Your previous orders">Order History</a> |
-        <a class="nav-link" href="login.html" title="Logout">Logout</a>
-    </nav>
-
-    <main>
-        <section class="card">
-            <figure>
-                <img src="images/place-order.jpeg" alt="Place Order" width="80" height="80" title="Order">
-            </figure>
-            <h2>Place Your Order</h2>
-
-            <form action="#" method="post" onsubmit="return placeOrder()">
-                <input type="hidden" name="orderSource" value="web">
-                <fieldset>
-                    <legend>Order Details</legend>
-                    <label for="customername">Customer Name:</label><br>
-                    <input type="text" id="customername" name="customername" class="field" maxlength="50"
-                        placeholder="Your name" required autofocus><br><br>
-
-                    <label for="foodname">Food Name:</label><br>
-                    <input type="text" id="foodname" name="foodname" class="field" list="foodlist"
-                        placeholder="Type food name" required>
-                    <datalist id="foodlist">
-                        <option value="Chicken Burger">
-                        <option value="Pizza">
-                        <option value="French Fries">
-                        <option value="Tea">
-                        <option value="Fried Rice">
-                    </datalist><br><br>
-
-                    <label for="quantity">Quantity:</label><br>
-                    <input type="number" id="quantity" name="quantity" class="field" min="1" max="20" value="1"
-                        required><br><br>
-
-                    <label for="totalprice">Total Price (Tk):</label><br>
-                    <input type="number" id="totalprice" name="totalprice" class="field" min="0" required><br><br>
-
-                    Payment Method:<br>
-                    <input type="radio" id="cash" name="payment" value="Cash" checked>
-                    <label for="cash">Cash</label>
-                    <input type="radio" id="card" name="payment" value="Card">
-                    <label for="card">Card</label>
-                    <input type="radio" id="mobile" name="payment" value="Mobile Banking">
-                    <label for="mobile">Mobile Banking</label><br><br>
-
-                    <label for="delivery">Collection Method:</label><br>
-                    <select id="delivery" name="delivery" class="field" required>
-                        <option value="" disabled selected>Select Collection Method</option>
-                        <option value="Counter Pickup">Counter Pickup</option>
-                        <option value="Table Service">Table Service</option>
-                    </select><br><br>
-
-                    <label for="pickupdate">Order Date:</label><br>
-                    <input type="date" id="pickupdate" name="pickupdate" class="field"><br><br>
-
-                    <label for="instructions">Additional Instructions:</label><br>
-                    <textarea id="instructions" name="instructions" class="field" rows="4" cols="30"
-                        maxlength="200"></textarea><br><br>
-
-                    <input type="checkbox" id="confirm" name="confirm" required>
-                    <label for="confirm">I confirm my order</label><br><br>
-
-                    <button type="submit" class="btn">Confirm Order</button>
-                    <button type="reset" class="btn btn-reset">Clear</button>
-                </fieldset>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>Copyright &copy; 2026 CampusBite. All Rights Reserved.</p>
-        <p>University Canteen Management System</p>
-        <p><a class="nav-link" href="#top">Back to top</a></p>
-    </footer>
-
-    <script src="JS/placeHistory.js"></script>
-
+</main>
+<footer>
+<p>Copyright &copy; 2026 CampusBite. All Rights Reserved.</p>
+<p>University Canteen Management System</p>
+<p><a class="nav-link" href="#top">Back to top</a></p>
+</footer>
+<script src="JS/placeOrder.js"></script>
 </body>
-
 </html>
